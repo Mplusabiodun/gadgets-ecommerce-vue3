@@ -11,7 +11,6 @@
       ><span @click="add" class="add">+</span>
     </button>
   </li>
-  <!-- ><span class="figure">{{ cart.cartPerProduct }}</span -->
 </template>
 <script>
 export default {

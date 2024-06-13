@@ -44,10 +44,10 @@
 
     <div class="img_cont">
       <div class="small_img">
-        <img id="audio_gear" src="../pics/SD11.png" alt="SD11" />
-        <img id="HD11" src="../pics/SD12.png" alt="SD12" />
+        <img id="audio_gear" :src="speakerDetails?.live_image[0]" alt="SD11" />
+        <img id="HD11" :src="speakerDetails?.live_image[1]" alt="SD12" />
       </div>
-      <img id="big_img" src="../pics/SD13.png" alt="SD13" />
+      <img id="big_img" :src="speakerDetails?.live_image[2]" alt="SD13" />
     </div>
 
     <!-- here -->
@@ -91,7 +91,7 @@ export default {
   inject: ["products", "cart"],
   data() {
     return {
-      speakerDetails: "",
+      speakerDetails: null,
     };
   },
   methods: {
@@ -122,7 +122,7 @@ export default {
       }
     },
   },
-  mounted() {
+  created() {
     const speakerId = this.$route.params.speakerId;
     const speakerProducts = this.products.filter(
       (product) => product.type === "speakers"

@@ -93,7 +93,7 @@
   </div>
 
   <dialog open v-if="continueToPay">
-    <div class="path_div"><img id="path" :src="path" alt="" /></div>
+    <div class="path_div"><img id="path" src="@/assets/Path.png" alt="" /></div>
     <h2 class="thankyou">
       THANK YOU <br />
       FOR YOUR ORDER
@@ -128,7 +128,7 @@
 </template>
 <script>
 import CartList from "./CartList.vue";
-import path from "@/assets/Path.png";
+// import path from "@/assets/Path.png";
 export default {
   components: {
     CartList,
@@ -136,7 +136,7 @@ export default {
   data() {
     return {
       continueToPay: false,
-      path: path,
+      // path: path,
     };
   },
   methods: {

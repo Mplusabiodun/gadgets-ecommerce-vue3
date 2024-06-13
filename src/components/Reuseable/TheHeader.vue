@@ -17,14 +17,19 @@
     </nav>
     <hr />
 
+    <div v-if="addToCart" @click="addToCart = false" class="backdrop"></div>
     <dialog open v-if="addToCart">
       <div class="cart">
         <h3>CART({{ noOfSelectedProduct }})</h3>
         <button @click="removeAllCart" class="remove">Remove all</button>
       </div>
-      <ul class="products">
+      <ul class="products" v-if="cart.length > 0">
         <cart-list :cartList="cart"></cart-list>
       </ul>
+      <div v-else class="emptycart">
+        <h2>Cart is empty</h2>
+        <p>You don't have any item yet</p>
+      </div>
       <div class="total-checkout">
         <div class="total">
           <h3>TOTAL</h3>
@@ -55,7 +60,6 @@ export default {
     toCart() {
       this.addToCart = !this.addToCart;
       this.noOfSelectedProduct = this.cart.length;
-      // let totalPrices;
       for (const products of this.cart) {
         this.total += parseInt(products.cartPrice);
         console.log(products.cartPrice);
@@ -83,7 +87,9 @@ export default {
 * {
   color: #000000;
 }
+
 .outside {
+  position: relative;
   color: #ffffff;
   background: #0e0e0e;
   position: fixed;
@@ -137,12 +143,25 @@ hr {
   margin: 0 auto;
   opacity: 50%;
 }
-dialog {
+.backdrop {
   position: fixed;
-  top: 55vh;
-  /* top: 55%; */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  z-index: 50;
+}
+.emptycart {
+  text-align: center;
+}
+dialog {
+  position: absolute;
+  top: 120%;
   left: 69%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   width: 30%;
   background-color: #fff;
   border: 2px solid #ccc;
@@ -172,7 +191,7 @@ dialog {
 }
 .products {
   height: 15rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }

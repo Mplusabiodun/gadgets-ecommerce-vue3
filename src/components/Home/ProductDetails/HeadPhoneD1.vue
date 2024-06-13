@@ -2,17 +2,17 @@
   <div class="container">
     <button @click="goBack" class="go_back">Go Back</button>
     <div class="HeadphoneXX">
-      <img id="headphonemarkII" :src="productDetails.image" alt="headphone" />
+      <img id="headphonemarkII" :src="productDetails?.image" alt="headphone" />
       <div class="second">
-        <p v-if="productDetails.new === true" class="new">NEW PRODUCT</p>
-        <h1 class="XX99_MARK">{{ productDetails.name }}</h1>
+        <p v-if="productDetails?.new === true" class="new">NEW PRODUCT</p>
+        <h1 class="XX99_MARK">{{ productDetails?.name }}</h1>
         <p class="headphoneII_word">
-          {{ productDetails.description }}
+          {{ productDetails?.description }}
         </p>
         <p class="price">$ {{ headPhonePrice() }}</p>
         <button class="number">
           <span @click="sub" class="sub">-</span
-          ><span class="figure">{{ productDetails.perProduct }}</span
+          ><span class="figure">{{ productDetails?.perProduct }}</span
           ><span @click="add" class="add">+</span>
         </button>
         <button @click="toCart" class="addto_cart">ADD TO CART</button>
@@ -24,7 +24,7 @@
         <h2 class="features">FEATURES</h2>
         <p
           class="content"
-          v-for="feature in productDetails.features"
+          v-for="feature in productDetails?.features"
           :key="feature"
         >
           {{ feature }}
@@ -34,7 +34,7 @@
         <h2 class="box">IN THE BOX</h2>
         <ul
           class="content"
-          v-for="box in productDetails.in_box"
+          v-for="box in productDetails?.in_box"
           :key="box.title"
         >
           <li>
@@ -42,6 +42,14 @@
           </li>
         </ul>
       </div>
+    </div>
+
+    <div class="img_cont">
+      <div class="small_img">
+        <img id="audio_gear" :src="productDetails?.live_image[0]" alt="HD21" />
+        <img id="HD11" :src="productDetails?.live_image[1]" alt="HD22" />
+      </div>
+      <img id="big_img" :src="productDetails?.live_image[2]" alt="HD23" />
     </div>
 
     <!-- here -->
@@ -86,7 +94,7 @@ export default {
   inject: ["products", "cart"],
   data() {
     return {
-      productDetails: "",
+      productDetails: null,
       addToCart: false,
     };
   },
@@ -96,16 +104,16 @@ export default {
     },
     headPhonePrice() {
       let price =
-        parseInt(this.productDetails.price) * this.productDetails.perProduct;
+        parseInt(this.productDetails?.price) * this.productDetails?.perProduct;
       return price;
     },
     toCart() {
       this.cart.push({
-        cartName: this.productDetails.alias,
-        cartImage: this.productDetails.image,
-        // cartPrice: this.productDetails.price,
+        cartName: this.productDetails?.alias,
+        cartImage: this.productDetails?.image,
+        // cartPrice: this.productDetails?.price,
         cartPrice: this.headPhonePrice(),
-        cartPerProduct: this.productDetails.perProduct,
+        cartPerProduct: this.productDetails?.perProduct,
       });
     },
     add() {
@@ -113,22 +121,23 @@ export default {
     },
     sub() {
       this.productDetails.perProduct -= 1;
-      if (this.productDetails.perProduct < 1) {
+      if (this.productDetails?.perProduct < 1) {
         return (this.productDetails.perProduct = 1);
       }
     },
   },
-  mounted() {
+  created() {
     const phoneId = this.$route.params.phoneId;
     const headphoneProducts = this.products.filter(
       (product) => product.type === "headphones"
     );
+    console.log("This is headphoneProduct", headphoneProducts);
     const selectedPhone = headphoneProducts.find((product) => {
       return product.id === phoneId;
     });
     this.productDetails = selectedPhone;
-    // console.log(selectedPhone);
-    // console.log(this.productDetails);
+    console.log(selectedPhone);
+    console.log(this.productDetails);
   },
 };
 </script>
