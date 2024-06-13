@@ -56,11 +56,6 @@ export default {
       return this.products.filter((product) => product.type === "earphones");
     },
   },
-  // methods: {
-  //   earphoneYX1() {
-  //     this.$router.push("/earphones/YX1Wireless");
-  //   },
-  // },
 };
 </script>
 <style scoped>
@@ -123,14 +118,6 @@ h2 {
   font-size: 13px;
   line-height: 22px;
 }
-/* .see_product {
-  width: 10rem;
-  height: 3rem;
-  font-weight: bold;
-  text-align: center;
-  background-color: #fbaf85;
-  border: 1px solid #fbaf85;
-} */
 .see_product2 {
   padding: 10px 20px;
   width: 10rem;
@@ -140,6 +127,11 @@ h2 {
   text-decoration: none;
   background-color: #fbaf85;
   border: 1px solid #fbaf85;
+}
+.see_product2:hover,
+.see_product2:active {
+  background-color: #d87d4a;
+  border-color: #d87d4a;
 }
 .best {
   margin-top: 0;

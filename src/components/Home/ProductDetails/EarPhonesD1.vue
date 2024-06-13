@@ -14,9 +14,11 @@
         <p class="headphoneII_word">
           {{ earphoneDetails.description }}
         </p>
-        <p class="price">$ {{ earphoneDetails.price }}</p>
+        <p class="price">$ {{ earPhonePrice() }}</p>
         <button class="number">
-          <span class="sub">-</span><span>1</span><span class="add">+</span>
+          <span @click="sub" class="sub">-</span
+          ><span class="figure">{{ earphoneDetails.perProduct }}</span
+          ><span @click="add" class="add">+</span>
         </button>
         <button @click="toCart" class="addto_cart">ADD TO CART</button>
       </div>
@@ -103,13 +105,28 @@ export default {
     goBack() {
       this.$router.push("/earphones");
     },
+    earPhonePrice() {
+      let price =
+        parseInt(this.earphoneDetails.price) * this.earphoneDetails.perProduct;
+      return price;
+    },
     toCart() {
-      this.addToCart = true;
       this.cart.push({
         cartName: this.earphoneDetails.alias,
         cartImage: this.earphoneDetails.image,
-        cartPrice: this.earphoneDetails.price,
+        // cartPrice: this.earphoneDetails.price,
+        cartPrice: this.earPhonePrice(),
+        cartPerProduct: this.earphoneDetails.perProduct,
       });
+    },
+    add() {
+      this.earphoneDetails.perProduct += 1;
+    },
+    sub() {
+      this.earphoneDetails.perProduct -= 1;
+      if (this.earphoneDetails.perProduct < 1) {
+        return (this.earphoneDetails.perProduct = 1);
+      }
     },
   },
   mounted() {
@@ -198,8 +215,9 @@ export default {
   background: #f1f1f1;
   border: 1px solid #f1f1f1;
   margin-right: 12px;
-  letter-spacing: 1.2rem;
-  text-align: right;
+}
+.figure {
+  margin: 0 1.4rem;
 }
 .sub,
 .add {
@@ -213,6 +231,11 @@ export default {
   background-color: #fbaf85;
   border: 1px solid #fbaf85;
   color: #ffffff;
+}
+.addto_cart:hover,
+.addto_cart:active {
+  background-color: #d87d4a;
+  border-color: #d87d4a;
 }
 
 /* Features and in d box styling */

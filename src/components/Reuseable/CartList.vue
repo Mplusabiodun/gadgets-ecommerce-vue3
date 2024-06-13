@@ -3,36 +3,45 @@
     <img :src="cart.cartImage" :alt="cart.cartName" />
     <div class="name_price">
       <h3>{{ cart.cartName }}</h3>
-      <p>$ {{ cart.cartPrice * numberOfProduct }}</p>
+      <p>$ {{ cart.cartPrice }}</p>
     </div>
     <button class="number">
-      <span @click="sub" class="sub">-</span><span>{{ numberOfProduct }}</span
+      <span @click="sub" class="sub">-</span
+      ><span class="figure">{{ cart.cartPerProduct }}</span
       ><span @click="add" class="add">+</span>
     </button>
   </li>
+  <!-- ><span class="figure">{{ cart.cartPerProduct }}</span -->
 </template>
 <script>
 export default {
   props: ["cartList"],
+  // inject: ["numberOfProduct"],
   data() {
     return {
-      numberOfProduct: 1,
+      // updatedNumberOfProduct: 0,
     };
   },
-  computed: {},
+  computed: {
+    // numberOfProduct() {
+    //   let requiredNumberOfProduct;
+    //   for (const cart of this.cartList) {
+    //     requiredNumberOfProduct = cart.cartPerProduct;
+    //     // numberOfProduct = cart.cartPerProduct + 1;
+    //   }
+    //   return requiredNumberOfProduct;
+    // },
+  },
   methods: {
-    add() {
-      this.numberOfProduct += 1;
-      if (this.numberOfProduct >= 9) {
-        return (this.numberOfProduct = 9);
-      }
-    },
-    sub() {
-      this.numberOfProduct -= 1;
-      if (this.numberOfProduct <= 1) {
-        return (this.numberOfProduct = 1);
-      }
-    },
+    // add() {
+    //   return this.numberOfProduct + 1;
+    // },
+    // sub() {
+    //   this.numberOfProduct -= 1;
+    //   if (this.numberOfProduct < 1) {
+    //     return (this.numberOfProduct = 1);
+    //   }
+    // },
   },
 };
 </script>
@@ -76,10 +85,11 @@ p {
   text-align: center;
   background: #f1f1f1;
   border: 1px solid #f1f1f1;
-  letter-spacing: 1.1rem;
-  text-align: right;
   font-size: 15px;
   font-weight: bold;
+}
+.figure {
+  margin: 0 1.2rem;
 }
 .sub,
 .add {

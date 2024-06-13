@@ -7,9 +7,11 @@
         <p v-if="speakerDetails.new === true" class="new">NEW PRODUCT</p>
         <h1 class="XX99_MARK">{{ speakerDetails.name }}</h1>
         <p class="headphoneII_word">{{ speakerDetails.description }}.</p>
-        <p class="price">$ {{ speakerDetails.price }}</p>
+        <p class="price">$ {{ speakerPrice() }}</p>
         <button class="number">
-          <span class="sub">-</span><span>1</span><span class="add">+</span>
+          <span @click="sub" class="sub">-</span
+          ><span class="figure">{{ speakerDetails.perProduct }}</span
+          ><span @click="add" class="add">+</span>
         </button>
         <button @click="toCart" class="addto_cart">ADD TO CART</button>
       </div>
@@ -96,13 +98,28 @@ export default {
     goBack() {
       this.$router.push("/speakers");
     },
+    speakerPrice() {
+      let price =
+        parseInt(this.speakerDetails.price) * this.speakerDetails.perProduct;
+      return price;
+    },
     toCart() {
-      this.addToCart = true;
       this.cart.push({
         cartName: this.speakerDetails.alias,
         cartImage: this.speakerDetails.image,
-        cartPrice: this.speakerDetails.price,
+        // cartPrice: this.speakerDetails.price,
+        cartPrice: this.speakerPrice(),
+        cartPerProduct: this.speakerDetails.perProduct,
       });
+    },
+    add() {
+      this.speakerDetails.perProduct += 1;
+    },
+    sub() {
+      this.speakerDetails.perProduct -= 1;
+      if (this.speakerDetails.perProduct < 1) {
+        return (this.speakerDetails.perProduct = 1);
+      }
     },
   },
   mounted() {
@@ -191,8 +208,9 @@ export default {
   background: #f1f1f1;
   border: 1px solid #f1f1f1;
   margin-right: 12px;
-  letter-spacing: 1.2rem;
-  text-align: right;
+}
+.figure {
+  margin: 0 1.4rem;
 }
 .sub,
 .add {
@@ -207,7 +225,11 @@ export default {
   border: 1px solid #fbaf85;
   color: #ffffff;
 }
-
+.addto_cart:hover,
+.addto_cart:active {
+  background-color: #d87d4a;
+  border-color: #d87d4a;
+}
 /* Features and in d box styling */
 .container2 {
   display: flex;

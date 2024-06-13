@@ -70,8 +70,6 @@ export default {
 <style scoped>
 .container {
   width: 100%;
-  /* gap: 0px;
-  opacity: 0px; */
   color: #ffffff;
   background: #0e0e0e;
   padding: 40px 50px 50px 50px;
@@ -112,6 +110,12 @@ export default {
   color: #0e0e0e;
   border: 1px solid #0e0e0e;
   margin-top: 2rem;
+}
+.see_product3:hover,
+.see_product3:active {
+  background-color: #0e0e0e;
+  border-color: #0e0e0e;
+  color: #ffffff;
 }
 #ZX7_NAME {
   font-family: Manrope;
@@ -176,6 +180,11 @@ export default {
   background-color: #fbaf85;
   border: 1px solid #fbaf85;
 }
+.see_product:hover,
+.see_product:active {
+  background-color: #d87d4a;
+  border-color: #d87d4a;
+}
 .see_product2 {
   width: 10rem;
   height: 3rem;
@@ -185,6 +194,12 @@ export default {
   color: #ffffff;
   background-color: #0e0e0e;
   border: 1px solid #0e0e0e;
+}
+.see_product2:hover,
+.see_product2:active {
+  background-color: #ffffff;
+  border-color: #0e0e0e;
+  color: #0e0e0e;
 }
 .word {
   width: 19rem;
@@ -200,7 +215,6 @@ export default {
 }
 .XX99_MARK {
   width: 22rem;
-  /* height: 7rem; */
   margin-top: 16px;
   font-family: Manrope;
   font-size: 3.2rem;

@@ -9,9 +9,10 @@
         <p class="headphoneII_word">
           {{ productDetails.description }}
         </p>
-        <p class="price">$ {{ productDetails.price }}</p>
+        <p class="price">$ {{ headPhonePrice() }}</p>
         <button class="number">
-          <span @click="sub" class="sub">-</span><span>0</span
+          <span @click="sub" class="sub">-</span
+          ><span class="figure">{{ productDetails.perProduct }}</span
           ><span @click="add" class="add">+</span>
         </button>
         <button @click="toCart" class="addto_cart">ADD TO CART</button>
@@ -82,7 +83,7 @@
 
 <script>
 export default {
-  inject: ["products", "cart", "numberOfProduct"],
+  inject: ["products", "cart"],
   data() {
     return {
       productDetails: "",
@@ -93,27 +94,29 @@ export default {
     goBack() {
       this.$router.push("/headphones");
     },
+    headPhonePrice() {
+      let price =
+        parseInt(this.productDetails.price) * this.productDetails.perProduct;
+      return price;
+    },
     toCart() {
       this.cart.push({
         cartName: this.productDetails.alias,
         cartImage: this.productDetails.image,
-        cartPrice: this.productDetails.price,
+        // cartPrice: this.productDetails.price,
+        cartPrice: this.headPhonePrice(),
+        cartPerProduct: this.productDetails.perProduct,
       });
-      // this.numberOfProduct += 1;
-      // console.log(`this is number of product ${this.numberOfProduct}`);
     },
-    // add() {
-    //   this.numberOfProduct += 1;
-    //   if (this.numberOfProduct >= 9) {
-    //     return (this.numberOfProduct = 9);
-    //   }
-    // },
-    // sub() {
-    //   this.numberOfProduct -= 1;
-    //   if (this.numberOfProduct <= 1) {
-    //     return (this.numberOfProduct = 1);
-    //   }
-    // },
+    add() {
+      this.productDetails.perProduct += 1;
+    },
+    sub() {
+      this.productDetails.perProduct -= 1;
+      if (this.productDetails.perProduct < 1) {
+        return (this.productDetails.perProduct = 1);
+      }
+    },
   },
   mounted() {
     const phoneId = this.$route.params.phoneId;
@@ -200,8 +203,9 @@ export default {
   background: #f1f1f1;
   border: 1px solid #f1f1f1;
   margin-right: 12px;
-  letter-spacing: 1.2rem;
-  text-align: right;
+}
+.figure {
+  margin: 0 1.4rem;
 }
 .sub,
 .add {
@@ -215,6 +219,11 @@ export default {
   background-color: #fbaf85;
   border: 1px solid #fbaf85;
   color: #ffffff;
+}
+.addto_cart:hover,
+.addto_cart:active {
+  background-color: #d87d4a;
+  border-color: #d87d4a;
 }
 
 /* Features and in d box styling */
