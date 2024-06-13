@@ -93,23 +93,32 @@
   </div>
 
   <dialog open v-if="continueToPay">
-    <div><img src="#" alt="" /></div>
-    <h2>THANK YOU FOR YOUR ORDER</h2>
-    <p>You will receive an email confirmation shortly.</p>
-    <div>
-      <div>
-        <div>
-          <img src="#" alt="" />
-          <div>
+    <div class="path_div"><img id="path" :src="path" alt="" /></div>
+    <h2 class="thankyou">
+      THANK YOU <br />
+      FOR YOUR ORDER
+    </h2>
+    <p class="confimationemail">
+      You will receive an email confirmation shortly.
+    </p>
+    <div class="main_div">
+      <div class="inner_div">
+        <div class="firstInnerDiv">
+          <img
+            id="firstProduct"
+            src="../Home/pics/headphonemarkII_upgrade.png"
+            alt=""
+          />
+          <div class="name_price">
             <h3>XX99 MK II</h3>
             <p>$ 2,999</p>
           </div>
-          <p>x1</p>
+          <p class="number">x1</p>
         </div>
         <hr />
-        <p>and 2 other item(s)</p>
+        <p class="andothers">and 2 other item(s)</p>
       </div>
-      <div>
+      <div class="inner_div2">
         <h3>Grand total</h3>
         <p>$5,446</p>
       </div>
@@ -119,6 +128,7 @@
 </template>
 <script>
 import CartList from "./CartList.vue";
+import path from "@/assets/Path.png";
 export default {
   components: {
     CartList,
@@ -126,6 +136,7 @@ export default {
   data() {
     return {
       continueToPay: false,
+      path: path,
     };
   },
   methods: {
@@ -139,47 +150,6 @@ export default {
 };
 </script>
 <style scoped>
-.summary {
-  padding: 2rem 1.5rem 2rem 1.5rem;
-  border-radius: 6px;
-  width: 30%;
-  height: 35rem;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-}
-.summary_word {
-  font-size: 18px;
-  margin-bottom: 1rem;
-}
-.products {
-  height: 15rem;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-.total {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0.8rem 0;
-}
-.total h3 {
-  opacity: 50%;
-  font-size: 13px;
-}
-.total p {
-  /* font-size: 13px; */
-  font-weight: bold;
-}
-.continue {
-  width: 100%;
-  padding: 0.7rem;
-  background-color: #d87d4a;
-  border: 1px solid #d87d4a;
-  color: #fff;
-  font-weight: bold;
-}
 * {
   color: #000000;
   box-sizing: border-box;
@@ -273,7 +243,6 @@ input:focus {
 .e_money label,
 .c_delivery label {
   display: inline;
-  /* margin: 0 0 8px 0; */
 }
 #e_money,
 #c_delivery {
@@ -281,6 +250,48 @@ input:focus {
 }
 .c_delivery {
   margin: 0 0 1rem 14.5rem;
+}
+
+/* SUMMARY */
+.summary {
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  border-radius: 6px;
+  width: 30%;
+  height: 35rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+.summary_word {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+.products {
+  height: 15rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+}
+.total h3 {
+  opacity: 50%;
+  font-size: 13px;
+}
+.total p {
+  font-weight: bold;
+}
+.continue {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #d87d4a;
+  border: 1px solid #d87d4a;
+  color: #fff;
+  font-weight: bold;
 }
 
 /* Dialog */
@@ -295,5 +306,107 @@ dialog {
   padding: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
+}
+.path_div {
+  width: 3rem;
+  height: 3rem;
+  background: #d87d4a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#path {
+  color: #fff;
+  width: 24.55px;
+  height: 16.8px;
+}
+.thankyou {
+  width: 17rem;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  margin: 1rem 0;
+}
+.confimationemail {
+  font-size: 15px;
+  text-align: left;
+  opacity: 50%;
+}
+.main_div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 9px;
+  margin: 1.4rem 0;
+}
+.inner_div {
+  width: 60%;
+  background: #f1f1f1;
+  padding: 1.2rem;
+}
+.firstInnerDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+#firstProduct {
+  width: 3.8rem;
+  height: 3.8rem;
+  margin-left: -0.7rem;
+}
+.name_price {
+  margin-left: -2rem;
+  text-align: left;
+}
+.name_price h3 {
+  font-size: 15px;
+  text-align: left;
+  font-weight: 700;
+}
+.name_price p {
+  font-size: 14px;
+  text-align: left;
+  opacity: 50%;
+  margin-top: 3px;
+}
+.number {
+  font-size: 14px;
+  opacity: 50%;
+  font-weight: bold;
+}
+hr {
+  opacity: 50%;
+  margin: 0.5rem 0;
+}
+.andothers {
+  opacity: 50%;
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+.inner_div2 {
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  width: 40%;
+  padding-left: 1rem;
+}
+.inner_div2 h3 {
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 15px;
+  opacity: 50%;
+}
+.inner_div2 p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
 }
 </style>

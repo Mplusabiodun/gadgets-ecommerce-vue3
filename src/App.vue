@@ -17,7 +17,6 @@ import headphoneXX59 from "./components/Home/pics/headphoneXX59.png";
 import ZX9SpeakerUpgrade from "./components/Home/pics/ZX9_Speaker_upgrade.png";
 import ZX7SpeakerUpgrade from "./components/Home/pics/ZX7_Speaker_upgrade.png";
 import YX1EarphoneUpgrade from "./components/Home/pics/YX1_Earphone_upgrade.png";
-/* <img id="audio_gear" src="../pics/audio_gear.jpg" alt="audio gear" /> */
 import audioGear from "./components/Home/pics/audio_gear.jpg";
 import HD11 from "./components/Home/pics/HD11.png";
 import HD12 from "./components/Home/pics/HD12.png";

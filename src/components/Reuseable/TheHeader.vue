@@ -68,8 +68,12 @@ export default {
       this.total = 0;
     },
     checkOut() {
-      this.addToCart = false;
-      this.$router.push("/checkout");
+      if (this.cart.length === 0) {
+        return (this.addToCart = false);
+      } else {
+        this.addToCart = false;
+        this.$router.push("/checkout");
+      }
     },
   },
 };
@@ -135,7 +139,8 @@ hr {
 }
 dialog {
   position: fixed;
-  top: 55%;
+  top: 55vh;
+  /* top: 55%; */
   left: 69%;
   transform: translate(-50%, -50%);
   width: 30%;
@@ -143,7 +148,7 @@ dialog {
   border: 2px solid #ccc;
   padding: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-  /* z-index: 999; */
+  z-index: 100;
   font-weight: bold;
   border-radius: 8px;
 }

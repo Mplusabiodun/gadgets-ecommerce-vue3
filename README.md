@@ -1,24 +1,5 @@
 # audiophile-ecommerce
 
-## Project setup
-```
-npm install
-```
+Audiophile-ecommercebis an online premier store (for buying) for high end headphones, earphones, speakers, and audio. An all in one stop to fulfillyour audio needs. Specially design for music lovers and sound specialists devoted to help them get their audio needs.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This is a multipage website that focuses on audio gear. Its made with Vue3 and can easily be scaled for more products
