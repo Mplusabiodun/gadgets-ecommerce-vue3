@@ -353,14 +353,16 @@ export default {
         },
       ],
       cart: [],
-      numberOfProduct: 0,
+      // total: 0,
+      // numberOfProduct: 0,
     };
   },
   provide() {
     return {
       products: this.products,
       cart: this.cart,
-      numberOfProduct: this.numberOfProduct,
+      // total: this.total,
+      // numberOfProduct: this.numberOfProduct,
     };
   },
 };

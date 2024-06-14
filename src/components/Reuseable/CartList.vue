@@ -15,21 +15,8 @@
 <script>
 export default {
   props: ["cartList"],
-  // inject: ["numberOfProduct"],
   data() {
-    return {
-      // updatedNumberOfProduct: 0,
-    };
-  },
-  computed: {
-    // numberOfProduct() {
-    //   let requiredNumberOfProduct;
-    //   for (const cart of this.cartList) {
-    //     requiredNumberOfProduct = cart.cartPerProduct;
-    //     // numberOfProduct = cart.cartPerProduct + 1;
-    //   }
-    //   return requiredNumberOfProduct;
-    // },
+    return {};
   },
   methods: {
     // add() {

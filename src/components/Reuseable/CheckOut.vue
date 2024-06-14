@@ -69,23 +69,30 @@
       <div class="summary">
         <h3 class="summary_word">SUMMARY</h3>
         <ul class="products">
-          <cart-list :cartList="cart"></cart-list>
+          <li v-for="eachproduct in cart" :key="eachproduct.cartName">
+            <img :src="eachproduct.cartImage" :alt="eachproduct.cartName" />
+            <div class="name_price">
+              <h3 class="cart_name">{{ eachproduct.cartName }}</h3>
+              <p class="cart_price">$ {{ eachproduct.cartPrice }}</p>
+            </div>
+            <h3 class="required">x{{ eachproduct.cartPerProduct }}</h3>
+          </li>
         </ul>
         <div class="total">
           <h3>TOTAL</h3>
-          <p>$ {{}}</p>
+          <p>$ {{ total }}</p>
         </div>
         <div class="total">
           <h3>SHIPPING</h3>
-          <p>$ {{}}</p>
+          <p>$ {{ shipping }}</p>
         </div>
         <div class="total">
           <h3>VAT (INCLUDED)</h3>
-          <p>$ {{}}</p>
+          <p>$ {{ vatIncluded }}</p>
         </div>
         <div class="total">
           <h3>GRAND TOTAL</h3>
-          <p>$ {{}}</p>
+          <p>$ {{ grandTotal }}</p>
         </div>
         <button @click="proceedToPay" class="continue">CONTINUE & PAY</button>
       </div>
@@ -103,40 +110,43 @@
     </p>
     <div class="main_div">
       <div class="inner_div">
-        <div class="firstInnerDiv">
+        <div
+          v-for="firstItem in cart"
+          :key="firstItem.cartName"
+          class="firstInnerDiv"
+        >
           <img
             id="firstProduct"
-            src="../Home/pics/headphonemarkII_upgrade.png"
-            alt=""
+            :src="firstItem.cartImage"
+            :alt="firstItem.cartName"
           />
           <div class="name_price">
-            <h3>XX99 MK II</h3>
-            <p>$ 2,999</p>
+            <h3>{{ firstItem.cartName }}</h3>
+            <p>$ {{ firstItem.cartPrice }}</p>
           </div>
-          <p class="number">x1</p>
+          <p class="number">x{{ firstItem.cartPerProduct }}</p>
         </div>
         <hr />
-        <p class="andothers">and 2 other item(s)</p>
+        <p class="andothers">and {{ cart.length - 1 }} other item(s)</p>
       </div>
       <div class="inner_div2">
         <h3>Grand total</h3>
-        <p>$5,446</p>
+        <p>$ {{ grandTotal }}</p>
       </div>
     </div>
     <button @click="goBack" class="continue">BACK TO HOME</button>
   </dialog>
 </template>
 <script>
-import CartList from "./CartList.vue";
-// import path from "@/assets/Path.png";
 export default {
-  components: {
-    CartList,
-  },
+  inject: ["cart"],
   data() {
     return {
       continueToPay: false,
-      // path: path,
+      total: 0,
+      shipping: 50,
+      vatIncluded: 1079,
+      grandTotal: 0,
     };
   },
   methods: {
@@ -145,7 +155,14 @@ export default {
     },
     proceedToPay() {
       this.continueToPay = true;
+      console.log(this.cart);
     },
+  },
+  created() {
+    for (const products of this.cart) {
+      this.total += products.cartPrice;
+    }
+    this.grandTotal = this.total + this.shipping;
   },
 };
 </script>
@@ -154,6 +171,46 @@ export default {
   color: #000000;
   box-sizing: border-box;
   overflow: hidden;
+}
+.products {
+  height: 15rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+img {
+  width: 3.8rem;
+  height: 3.8rem;
+}
+.name_price {
+  margin-right: 2rem;
+  text-align: left;
+}
+.cart_name {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+}
+.cart_price {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  opacity: 50%;
+  margin-top: 3px;
+}
+.required {
+  opacity: 25%;
+  font-size: 18px;
 }
 .container {
   margin: 2rem 0 0 13rem;
@@ -266,12 +323,7 @@ input:focus {
   font-size: 18px;
   margin-bottom: 1rem;
 }
-.products {
-  height: 15rem;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
+
 .total {
   display: flex;
   flex-direction: row;
@@ -355,12 +407,10 @@ dialog {
   font-weight: bold;
 }
 #firstProduct {
-  width: 3.8rem;
-  height: 3.8rem;
-  margin-left: -0.7rem;
+  width: 2.8rem;
+  height: 2.8rem;
 }
 .name_price {
-  margin-left: -2rem;
   text-align: left;
 }
 .name_price h3 {

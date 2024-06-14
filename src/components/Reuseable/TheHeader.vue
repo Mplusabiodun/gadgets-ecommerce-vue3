@@ -18,6 +18,7 @@
     <hr />
 
     <div v-if="addToCart" @click="addToCart = false" class="backdrop"></div>
+    <!-- <transition name="dialog"> -->
     <dialog open v-if="addToCart">
       <div class="cart">
         <h3>CART({{ noOfSelectedProduct }})</h3>
@@ -38,6 +39,7 @@
         <button @click="checkOut" class="checkout">CHECKOUT</button>
       </div>
     </dialog>
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -56,12 +58,18 @@ export default {
       total: 0,
     };
   },
+  // provide() {
+  //   return {
+  //     total: this.total,
+  //   };
+  // },
   methods: {
     toCart() {
       this.addToCart = !this.addToCart;
       this.noOfSelectedProduct = this.cart.length;
       for (const products of this.cart) {
-        this.total += parseInt(products.cartPrice);
+        this.total += products.cartPrice;
+        // this.total += parseInt(products.cartPrice);
         console.log(products.cartPrice);
         console.log(this.total);
       }
@@ -149,8 +157,9 @@ hr {
   left: 0;
   right: 0;
   height: 100dvh;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(5px);
+  /* background: rgba(0, 0, 0, 0.25); */
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(1px);
   cursor: pointer;
   z-index: 50;
 }
@@ -171,6 +180,24 @@ dialog {
   font-weight: bold;
   border-radius: 8px;
 }
+/* .dialog-enter-from,
+.dialog-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.dialog-enter-active {
+  transition: all 0.4s ease-out;
+}
+.dialog-leave-active {
+  transition: all 0.4s ease-in;
+}
+
+.dialog-enter-to,
+.dialog-leave-from {
+  opacity: 1;
+  transform: scale(1);
+} */
 .cart {
   display: flex;
   flex-direction: row;

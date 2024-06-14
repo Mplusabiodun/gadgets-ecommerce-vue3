@@ -40,17 +40,11 @@
         <button @click="YX1Earphones" class="see_product3">SEE PRODUCT</button>
       </div>
     </div>
-    <the-cart></the-cart>
     <the-best></the-best>
   </div>
 </template>
 <script>
-import TheCart from "../Reuseable/TheCart.vue";
-
 export default {
-  components: {
-    TheCart,
-  },
   methods: {
     XX99MarkII() {
       this.$router.push("/headphones/XX99MarkII");
