@@ -99,6 +99,11 @@
     </div>
   </div>
 
+  <div
+    v-if="continueToPay"
+    @click="continueToPay = false"
+    class="backdrop"
+  ></div>
   <dialog open v-if="continueToPay">
     <div class="path_div"><img id="path" src="@/assets/Path.png" alt="" /></div>
     <h2 class="thankyou">
@@ -110,24 +115,22 @@
     </p>
     <div class="main_div">
       <div class="inner_div">
-        <div
-          v-for="firstItem in cart"
-          :key="firstItem.cartName"
-          class="firstInnerDiv"
-        >
+        <div class="firstInnerDiv">
           <img
             id="firstProduct"
-            :src="firstItem.cartImage"
-            :alt="firstItem.cartName"
+            :src="firstOfCart.cartImage"
+            :alt="firstOfCart.cartName"
           />
           <div class="name_price">
-            <h3>{{ firstItem.cartName }}</h3>
-            <p>$ {{ firstItem.cartPrice }}</p>
+            <h3>{{ firstOfCart.cartName }}</h3>
+            <p>$ {{ firstOfCart.cartPrice }}</p>
           </div>
-          <p class="number">x{{ firstItem.cartPerProduct }}</p>
+          <p class="number">x{{ firstOfCart.cartPerProduct }}</p>
         </div>
         <hr />
-        <p class="andothers">and {{ cart.length - 1 }} other item(s)</p>
+        <p v-if="cart.length > 1" class="andothers">
+          and {{ cart.length - 1 }} other item(s)
+        </p>
       </div>
       <div class="inner_div2">
         <h3>Grand total</h3>
@@ -147,6 +150,7 @@ export default {
       shipping: 50,
       vatIncluded: 1079,
       grandTotal: 0,
+      firstOfCart: null,
     };
   },
   methods: {
@@ -162,6 +166,7 @@ export default {
     for (const products of this.cart) {
       this.total += products.cartPrice;
     }
+    this.firstOfCart = this.cart[0];
     this.grandTotal = this.total + this.shipping;
   },
 };
@@ -172,46 +177,7 @@ export default {
   box-sizing: border-box;
   overflow: hidden;
 }
-.products {
-  height: 15rem;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-li {
-  display: flex;
-  flex-direction: row;
-  margin-top: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-}
-img {
-  width: 3.8rem;
-  height: 3.8rem;
-}
-.name_price {
-  margin-right: 2rem;
-  text-align: left;
-}
-.cart_name {
-  font-size: 15px;
-  font-weight: 700;
-  text-align: left;
-}
-.cart_price {
-  font-size: 14px;
-  font-weight: 700;
-  text-align: left;
-  opacity: 50%;
-  margin-top: 3px;
-}
-.required {
-  opacity: 25%;
-  font-size: 18px;
-}
+
 .container {
   margin: 2rem 0 0 13rem;
 }
@@ -323,7 +289,46 @@ input:focus {
   font-size: 18px;
   margin-bottom: 1rem;
 }
-
+.products {
+  height: 15rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+img {
+  width: 4rem;
+  height: 4rem;
+}
+.name_price {
+  margin-right: 2rem;
+  text-align: left;
+}
+.cart_name {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+}
+.cart_price {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  opacity: 50%;
+  margin-top: 3px;
+}
+.required {
+  opacity: 25%;
+  font-size: 18px;
+}
 .total {
   display: flex;
   flex-direction: row;
@@ -358,6 +363,19 @@ dialog {
   padding: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
+  z-index: 100;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100dvh;
+  /* background: rgba(0, 0, 0, 0.25); */
+  background-color: rgba(0, 0, 0, 0.25);
+  /* backdrop-filter: blur(1px); */
+  cursor: pointer;
+  z-index: 50;
 }
 .path_div {
   width: 3rem;

@@ -106,8 +106,8 @@ export default {
       this.$router.push("/earphones");
     },
     earPhonePrice() {
-      let price =
-        parseInt(this.earphoneDetails.price) * this.earphoneDetails.perProduct;
+      let price = this.earphoneDetails.price * this.earphoneDetails.perProduct;
+      // parseInt(this.earphoneDetails.price) * this.earphoneDetails.perProduct;
       return price;
     },
     toCart() {

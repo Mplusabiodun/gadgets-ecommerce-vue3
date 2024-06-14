@@ -99,8 +99,8 @@ export default {
       this.$router.push("/speakers");
     },
     speakerPrice() {
-      let price =
-        parseInt(this.speakerDetails.price) * this.speakerDetails.perProduct;
+      let price = this.speakerDetails.price * this.speakerDetails.perProduct;
+      // parseInt(this.speakerDetails.price) * this.speakerDetails.perProduct;
       return price;
     },
     toCart() {

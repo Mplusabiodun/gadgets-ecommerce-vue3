@@ -10,7 +10,7 @@
 <script>
 import TheHeader from "./components/Reuseable/TheHeader.vue";
 import TheFooter from "./components/Reuseable/TheFooter.vue";
-import headphonemarkII from "./components/Home/pics/headphonemarkII.png";
+// import headphonemarkII from "./components/Home/pics/headphonemarkII.png";
 import headphonemarkIIUpgrade from "./components/Home/pics/headphonemarkII_upgrade.png";
 import headphonemarkI from "./components/Home/pics/headphonemarkI.png";
 import headphoneXX59 from "./components/Home/pics/headphoneXX59.png";
@@ -47,11 +47,11 @@ export default {
         {
           name: "XX99 Mark II Headphones",
           alias: "XX99 MK II",
-          image: headphonemarkII,
+          image: headphonemarkIIUpgrade,
           new: true,
           description:
             "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
-          price: "2999",
+          price: 2999,
           perProduct: 1,
           id: "XX99MarkII",
           type: "headphones",
@@ -103,7 +103,7 @@ export default {
           image: headphonemarkI,
           description:
             "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
-          price: "1750",
+          price: 1750,
           perProduct: 1,
           id: "XX99MarkI",
           type: "headphones",
@@ -151,7 +151,7 @@ export default {
           image: headphoneXX59,
           description:
             "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
-          price: "899",
+          price: 899,
           perProduct: 1,
           id: "XX59",
           type: "headphones",
@@ -200,7 +200,7 @@ export default {
           new: true,
           description:
             "Upgrade your sound system with the all new ZX9 active speaker. It's a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-          price: "4500",
+          price: 4500,
           perProduct: 1,
           id: "ZX9",
           type: "speakers",
@@ -252,7 +252,7 @@ export default {
           image: ZX7SpeakerUpgrade,
           description:
             "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
-          price: "3500",
+          price: 3500,
           perProduct: 1,
           id: "ZX7",
           type: "speakers",
@@ -305,7 +305,7 @@ export default {
           new: true,
           description:
             "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
-          price: "599",
+          price: 599,
           perProduct: 1,
           id: "YX1",
           type: "earphones",
