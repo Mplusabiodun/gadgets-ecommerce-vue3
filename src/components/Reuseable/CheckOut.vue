@@ -9,59 +9,119 @@
         <div class="name_email">
           <div>
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Alexei Ward" />
+            <input
+              id="name"
+              type="text"
+              placeholder="Alexei Ward"
+              v-model.trim="userName"
+              @blur="validate"
+              :class="{ invalid: inputValidity === 'invalid' }"
+            />
           </div>
           <div class="email_div">
             <label for="email">Email Address</label>
-            <input id="email" type="email" placeholder="alexei@mail.com" />
+            <input
+              id="email"
+              type="email"
+              placeholder="alexei@mail.com"
+              v-model.trim="userEmail"
+              :class="{ invalid: inputValidity === 'invalid' }"
+            />
           </div>
         </div>
         <div>
           <label for="phone">Phone Number</label>
-          <input id="phone" type="number" placeholder="+1 202-555-0136" />
+          <input
+            id="phone"
+            type="number"
+            placeholder="+1 202-555-0136"
+            v-model="userNumber"
+          />
         </div>
 
         <p class="shipping">SHIPPING INFO</p>
         <div>
           <label for="address">Address</label>
-          <input id="address" type="text" placeholder="1137 Williams Avenue" />
+          <input
+            id="address"
+            type="text"
+            placeholder="1137 Williams Avenue"
+            v-model.trim="userAddress"
+          />
         </div>
         <div class="zipcode_city">
           <div>
             <label for="zipcode">ZIP Code</label>
-            <input id="zipcode" type="number" placeholder="10001" />
+            <input
+              id="zipcode"
+              type="number"
+              placeholder="10001"
+              v-model="userZipCode"
+            />
           </div>
           <div class="city_div">
             <label for="city">City</label>
-            <input id="city" type="text" placeholder="New York" />
+            <input
+              id="city"
+              type="text"
+              placeholder="New York"
+              v-model.trim="userCity"
+            />
           </div>
         </div>
         <div>
           <label for="Country">Country</label>
-          <input id="Country" type="text" placeholder="United States" />
+          <input
+            id="Country"
+            type="text"
+            placeholder="United States"
+            v-model.trim="userCountry"
+          />
         </div>
 
         <p class="payment">PAYMENT DETAILS</p>
         <div class="payment_method">
           <label>Payment Method</label>
           <div class="e_money">
-            <input name="e_cash" id="e_money" type="radio" />
+            <input
+              name="payment_method"
+              id="e_money"
+              type="radio"
+              value="e_money"
+              v-model="userEcash"
+            />
             <label for="e_money"> e-Money</label>
           </div>
         </div>
         <div class="c_delivery">
-          <input name="e_cash" id="c_delivery" type="radio" />
+          <input
+            name="payment_method"
+            id="c_delivery"
+            type="radio"
+            value="c_delivery"
+            v-model="userEcash"
+          />
           <label for="c_delivery"> Cash on Delivery</label>
         </div>
 
         <div class="emoneyNumberPin">
           <div>
             <label for="eMoneyNumber">e-Money Number</label>
-            <input id="eMoneyNumber" type="number" placeholder="238521993" />
+            <input
+              id="eMoneyNumber"
+              type="number"
+              placeholder="238521993"
+              v-model="userMoneyNumber"
+            />
           </div>
           <div class="eMoneyPin">
             <label for="eMoneyPin">e-Money PIN</label>
-            <input id="eMoneyPin" type="number" placeholder="6891" />
+            <input
+              id="eMoneyPin"
+              type="number"
+              placeholder="6891"
+              v-model="userMoneyPin"
+            />
           </div>
         </div>
       </div>
@@ -92,7 +152,7 @@
         </div>
         <div class="total">
           <h3>GRAND TOTAL</h3>
-          <p>$ {{ grandTotal }}</p>
+          <p class="grandtotal">$ {{ grandTotal }}</p>
         </div>
         <button @click="proceedToPay" class="continue">CONTINUE & PAY</button>
       </div>
@@ -145,6 +205,17 @@ export default {
   inject: ["cart"],
   data() {
     return {
+      userName: "",
+      userEmail: "",
+      userNumber: null,
+      userAddress: "",
+      userZipCode: null,
+      userCity: "",
+      userCountry: "",
+      userEcash: "",
+      userMoneyNumber: null,
+      userMoneyPin: null,
+      inputValidity: "pending",
       continueToPay: false,
       total: 0,
       shipping: 50,
@@ -158,8 +229,22 @@ export default {
       this.$router.push("/homepage");
     },
     proceedToPay() {
+      if (
+        this.inputValidity === "invalid" ||
+        this.userName === "" ||
+        this.userEmail === ""
+      ) {
+        return (this.inputValidity = "invalid");
+      }
       this.continueToPay = true;
       console.log(this.cart);
+    },
+    validate() {
+      if (this.userName === "") {
+        this.inputValidity = "invalid";
+      } else {
+        this.inputValidity = "valid";
+      }
     },
   },
   created() {
@@ -177,7 +262,10 @@ export default {
   box-sizing: border-box;
   overflow: hidden;
 }
-
+.invalid {
+  border: 2px solid red;
+  /* border-color: red; */
+}
 .container {
   margin: 2rem 0 0 13rem;
 }
@@ -194,7 +282,6 @@ export default {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   margin-right: 1rem;
 }
-
 .go_back {
   font-weight: bold;
   text-align: center;
@@ -203,7 +290,9 @@ export default {
   opacity: 50%;
   margin-bottom: 2rem;
 }
-
+.go_back:hover {
+  color: #d87d4a;
+}
 label {
   font-size: 12px;
   font-weight: 700;
@@ -214,8 +303,8 @@ input {
   border: 1px solid #cfcfcf;
   border-radius: 5px;
   width: 13.6rem;
-  padding: 0.7rem;
-  margin: 5px 0;
+  padding: 0.8rem;
+  margin: 10px 0;
 }
 input:focus {
   border: 1px solid #d87d4a;
@@ -341,6 +430,10 @@ img {
 }
 .total p {
   font-weight: bold;
+  letter-spacing: 2px;
+}
+.grandtotal {
+  color: #d87d4a;
 }
 .continue {
   width: 100%;

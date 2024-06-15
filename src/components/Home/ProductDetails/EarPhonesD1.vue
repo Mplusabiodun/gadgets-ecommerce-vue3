@@ -159,6 +159,9 @@ export default {
   border: none;
   opacity: 50%;
 }
+.go_back:hover {
+  color: #d87d4a;
+}
 .HeadphoneXX {
   display: flex;
   flex-direction: row;
