@@ -14,7 +14,6 @@
               type="text"
               placeholder="Alexei Ward"
               v-model.trim="userName"
-              @blur="validate"
               :class="{ invalid: inputValidity === 'invalid' }"
             />
           </div>
@@ -155,15 +154,14 @@
           <p class="grandtotal">$ {{ grandTotal }}</p>
         </div>
         <button @click="proceedToPay" class="continue">CONTINUE & PAY</button>
+        <p class="invalid_text" v-if="inputValidity === 'invalid'">
+          Please, complete the payment details and try again. Thank you!
+        </p>
       </div>
     </div>
   </div>
 
-  <div
-    v-if="continueToPay"
-    @click="continueToPay = false"
-    class="backdrop"
-  ></div>
+  <div v-if="continueToPay" @click="backDrop" class="backdrop"></div>
   <dialog open v-if="continueToPay">
     <div class="path_div"><img id="path" src="@/assets/Path.png" alt="" /></div>
     <h2 class="thankyou">
@@ -227,25 +225,40 @@ export default {
   methods: {
     goBack() {
       this.$router.push("/homepage");
+      this.cart.splice(0, this.cart.length);
+    },
+    backDrop() {
+      this.continueToPay = false;
+      this.$router.push("/homepage");
+      this.cart.splice(0, this.cart.length);
     },
     proceedToPay() {
       if (
-        this.inputValidity === "invalid" ||
         this.userName === "" ||
-        this.userEmail === ""
+        this.userEmail === "" ||
+        this.userNumber === null ||
+        this.userAddress === "" ||
+        this.userZipCode === null ||
+        this.userCity === "" ||
+        this.userCountry === "" ||
+        this.userEcash === "" ||
+        this.userMoneyNumber === null ||
+        this.userMoneyPin === null
       ) {
         return (this.inputValidity = "invalid");
-      }
-      this.continueToPay = true;
-      console.log(this.cart);
-    },
-    validate() {
-      if (this.userName === "") {
-        this.inputValidity = "invalid";
       } else {
         this.inputValidity = "valid";
+        this.continueToPay = true;
+        console.log(this.cart);
       }
     },
+    // validate() {
+    //   if (this.userName === "") {
+    //     this.inputValidity = "invalid";
+    //   } else {
+    //     this.inputValidity = "valid";
+    //   }
+    // },
   },
   created() {
     for (const products of this.cart) {
@@ -265,6 +278,9 @@ export default {
 .invalid {
   border: 2px solid red;
   /* border-color: red; */
+}
+.valid {
+  border: 1px solid #cfcfcf;
 }
 .container {
   margin: 2rem 0 0 13rem;
@@ -430,7 +446,7 @@ img {
 }
 .total p {
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 .grandtotal {
   color: #d87d4a;
@@ -442,6 +458,12 @@ img {
   border: 1px solid #d87d4a;
   color: #fff;
   font-weight: bold;
+}
+.invalid_text {
+  margin-top: 5px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
 }
 
 /* Dialog */
@@ -569,5 +591,6 @@ hr {
   color: #fff;
   font-weight: bold;
   font-size: 18px;
+  letter-spacing: 1px;
 }
 </style>

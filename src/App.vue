@@ -392,12 +392,11 @@ export default {
   right: 0;
   color: #ffffff;
 }
-/* Tablets (portrait and landscape) ----------- */
+/* Tablets / iPad ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Styles for tablets */
 }
-/* Mobile (portrait and landscape) ----------- */
+
+/* Mobile ----------- */
 @media only screen and (max-width: 767px) {
-  /* Styles for mobile devices */
 }
 </style>
