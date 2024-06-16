@@ -147,7 +147,6 @@ hr {
   left: 0;
   right: 0;
   height: 100dvh;
-  /* background: rgba(0, 0, 0, 0.25); */
   background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(1px);
   cursor: pointer;
@@ -200,11 +199,6 @@ dialog {
   justify-content: space-between;
   margin: 1rem 0;
 }
-/* .total-checkout {
-  bottom: 0;
-  left: 0;
-  right: 0;
-} */
 .total h3 {
   font-size: 15px;
   opacity: 50%;
@@ -221,5 +215,147 @@ dialog {
   border: 1px solid #d87d4a;
   color: #fff;
   letter-spacing: 2px;
+}
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  * {
+    margin: 0 -2rem;
+    color: #000000;
+  }
+  .outside {
+    position: relative;
+    color: #ffffff;
+    background: #0e0e0e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  .nav_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    font-weight: bold;
+  }
+  .navigations {
+    display: flex;
+    flex-direction: row;
+    font-family: Manrope;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 2px;
+  }
+  #assets {
+    width: 23.33px;
+    height: 20px;
+    top: 32px;
+    left: 1251.5px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .audiophile,
+  .navigations {
+    margin-right: 9em;
+    color: #ffffff;
+  }
+  a {
+    margin-right: 27px;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  a.router-link-active {
+    color: #d87d4a;
+  }
+  hr {
+    width: 80%;
+    margin: 0 auto;
+    opacity: 50%;
+  }
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100dvh;
+    /* background: rgba(0, 0, 0, 0.25); */
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(1px);
+    cursor: pointer;
+    z-index: 50;
+  }
+  .emptycart {
+    text-align: center;
+  }
+  dialog {
+    position: absolute;
+    top: 120%;
+    left: 69%;
+    transform: translate(-50%, 0%);
+    width: 30%;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  .cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .cart h3 {
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    text-align: left;
+  }
+  .cart button {
+    opacity: 50%;
+    font-size: 15px;
+    border: none;
+    background-color: inherit;
+    text-align: left;
+  }
+  .products {
+    height: 15rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  .total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+  .total h3 {
+    font-size: 15px;
+    opacity: 50%;
+  }
+  .total p {
+    font-size: 18px;
+  }
+  .checkout {
+    width: 100%;
+    text-align: center;
+    padding: 7px 0;
+    font-weight: bold;
+    background: #d87d4a;
+    border: 1px solid #d87d4a;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
 }
 </style>

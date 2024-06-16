@@ -73,6 +73,47 @@ export default {
   flex-direction: row;
   margin-left: 5rem;
 }
+.second {
+  margin-top: 4rem;
+  text-align: left;
+}
+.new {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 10px;
+  opacity: 49.64%;
+}
+.XX99_MARK {
+  width: 22rem;
+  margin-top: 16px;
+  font-family: Manrope;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 58px;
+  letter-spacing: 2px;
+}
+.word {
+  width: 19rem;
+  height: 4rem;
+  margin-top: 17px;
+  margin-bottom: 20px;
+  opacity: 75%;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+#bitmap {
+  width: 26rem;
+  height: 24rem;
+  margin-left: 10rem;
+}
+.container2 {
+  width: 100%;
+  color: #0e0e0e;
+  padding: 1.2rem 10rem 1rem 10rem;
+}
 .YX1_Name {
   font-family: Manrope;
   font-size: 28px;
@@ -160,11 +201,7 @@ export default {
   flex-direction: row;
   text-align: left;
 }
-.container2 {
-  width: 100%;
-  color: #0e0e0e;
-  padding: 1.2rem 10rem 1rem 10rem;
-}
+
 .see_product {
   width: 10rem;
   height: 3rem;
@@ -195,43 +232,144 @@ export default {
   border-color: #0e0e0e;
   color: #0e0e0e;
 }
-.word {
-  width: 19rem;
-  height: 4rem;
-  margin-top: 17px;
-  margin-bottom: 20px;
-  opacity: 75%;
-  font-family: Manrope;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 25px;
-  text-align: left;
-}
-.XX99_MARK {
-  width: 22rem;
-  margin-top: 16px;
-  font-family: Manrope;
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 58px;
-  letter-spacing: 2px;
-  text-align: left;
-}
-.new {
-  font-family: Manrope;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 10px;
-  text-align: left;
-  opacity: 49.64%;
-}
-.second {
-  margin-top: 4rem;
+
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 0;
+    margin: 0;
+    /* padding: 10px 20px 10px 20px; */
+  }
+  .XX99 {
+    background-image: url("@/assets/markll_background.png");
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 43rem;
+    width: 100%;
+    margin-left: -0.1rem;
+    margin-top: -3rem;
+  }
+  .second {
+    margin: 11rem auto 0;
+    text-align: center;
+  }
+  .XX99_MARK {
+    font-size: 3.4rem;
+  }
+  .word {
+    width: 23rem;
+  }
+  #bitmap {
+    display: none;
+  }
+  .YX1_Name {
+    text-align: center;
+  }
+  .see_product {
+    background-color: #d87d4a;
+    border: 1px solid #d87d4a;
+    letter-spacing: 1px;
+  }
+
+  .see_product2 {
+    width: 10rem;
+    height: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0e0e0e;
+    border: 1px solid #0e0e0e;
+  }
+  #YX1_Container2 {
+    width: 50%;
+    margin-left: 2rem;
+    background: #f1f1f1;
+    padding: 6rem 0 0 5rem;
+  }
+  #YX1_IMG {
+    width: 50%;
+  }
+  .YX1_Container {
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+  }
+  .see_product3 {
+    width: 10rem;
+    height: 3rem;
+    font-family: Manrope;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+    color: #0e0e0e;
+    border: 1px solid #0e0e0e;
+    margin-top: 2rem;
+  }
+  .see_product3:hover,
+  .see_product3:active {
+    background-color: #0e0e0e;
+    border-color: #0e0e0e;
+    color: #ffffff;
+  }
+  #ZX7_NAME {
+    font-family: Manrope;
+    color: #0e0e0e;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38.25px;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  #ZX7 {
+    background-image: url("./pics/ZX7_speaker.png");
+    background-size: cover;
+    height: 18rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding: 7rem 0 0 6rem;
+  }
+  #upgrade {
+    font-family: Manrope;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+    margin: 13px 0;
+    width: 60%;
+    opacity: 75%;
+  }
+  #ZX9_name {
+    width: 14rem;
+    font-family: Manrope;
+    font-size: 50px;
+    line-height: 47px;
+  }
+  #ZX9_inner {
+    margin: 4rem 0 4rem 10rem;
+    text-align: left;
+  }
+  #ZX9_Speaker {
+    width: 25%;
+    margin-top: 3rem;
+    margin-left: 6rem;
+  }
+  .ZXP_container {
+    color: #ffffff;
+    background: #d87d4a;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+  .container2 {
+    width: 100%;
+    color: #0e0e0e;
+    padding: 1.2rem 10rem 1rem 10rem;
+  }
 }
 
-#bitmap {
-  width: 26rem;
-  height: 24rem;
-  margin-left: 10rem;
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
 }
 </style>

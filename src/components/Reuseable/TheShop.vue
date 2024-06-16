@@ -1,7 +1,6 @@
 <template>
   <div class="general">
     <div class="headphones">
-      <!-- <img class="samephones" src="./pics/headphones.png" alt="headphones" /> -->
       <img
         class="samephones"
         src="../Home/pics/headphones.png"
@@ -87,5 +86,39 @@ export default {
   font-size: 17px;
   text-align: center;
   font-weight: 900;
+}
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .general {
+    margin-top: 1.5rem;
+  }
+  .headphones,
+  .speakers,
+  .earphones {
+    width: 243px;
+    margin-bottom: 2rem;
+  }
+  .samephones {
+    width: 7rem;
+    height: 9rem;
+  }
+  .phonewords {
+    font-size: 15px;
+    margin: 0 0 3px 0;
+    letter-spacing: 1px;
+  }
+  .shop {
+    letter-spacing: 1px;
+    font-size: 13px;
+    opacity: 70%;
+    /* margin-bottom: 8px; */
+  }
+  .arrow {
+    font-size: 20px;
+  }
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
 }
 </style>
