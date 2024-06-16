@@ -49,9 +49,6 @@ export default {
 };
 </script>
 <style scoped>
-/* * {
-  color: #ffffff;
-} */
 .nav_bar2 {
   display: flex;
   flex-direction: row;
@@ -82,7 +79,6 @@ li {
   text-align: left;
   font-size: 14px;
   padding-bottom: 1em;
-  /* color: #ffffff; */
 }
 #icons {
   text-align: right;
@@ -94,12 +90,39 @@ a {
 img {
   width: 1.3em;
   height: 1.3em;
-  /* margin-left: 1em; */
 }
 .copy_right {
   opacity: 50%;
   text-align: left;
   font-size: 14px;
-  /* padding-bottom: 1em; */
+}
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .nav_bar2 {
+    flex-direction: column;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  .navigations {
+    text-align: left;
+    margin: 2rem 0 1.5rem -4rem;
+  }
+  li {
+    margin-right: 1em;
+  }
+  .footer_words {
+    width: 98%;
+    margin: 0 auto 2rem;
+    font-size: 15px;
+  }
+  .copy_right {
+    font-size: 16px;
+    margin-top: -2rem;
+  }
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
 }
 </style>

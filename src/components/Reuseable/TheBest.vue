@@ -60,4 +60,37 @@
   width: 50%;
   padding-left: 2rem;
 }
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .audiogear_container {
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+  #audiogear_container2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .gear_name {
+    width: 35rem;
+    font-size: 40px;
+    text-align: center;
+    line-height: 2.6rem;
+  }
+  .gear_word {
+    width: 35.6rem;
+    font-size: 15px;
+    margin-top: 2rem;
+  }
+  #audiogear_img {
+    width: 100%;
+    height: 18.7rem;
+    padding-left: 0;
+    /* margin-bottom: 2rem; */
+  }
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
+}
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="outside">
     <nav class="nav_bar">
+      <img id="Hamburger" src="@\assets\Hamburger.png" alt="Hamburger" />
       <h3 class="audiophile">audiophile</h3>
       <nav class="navigations">
         <router-link to="/homepage">HOME</router-link>
@@ -16,6 +17,12 @@
       />
     </nav>
     <hr />
+    <!-- <nav class="navigations_duplicate">
+        <router-link to="/homepage">HOME</router-link>
+        <router-link to="/headphones">HEADPHONES</router-link>
+        <router-link to="/speakers">SPEAKERS</router-link>
+        <router-link to="/earphones">EARPHONES</router-link>
+      </nav> -->
 
     <div v-if="addToCart" @click="addToCart = false" class="backdrop"></div>
     <dialog open v-if="addToCart">
@@ -28,7 +35,7 @@
       </ul>
       <div v-else class="emptycart">
         <h2>Cart is empty</h2>
-        <p>You don't have any item yet</p>
+        <p>You haven't add any product yet</p>
       </div>
       <div class="total-checkout">
         <div class="total">
@@ -91,6 +98,7 @@ export default {
   color: #ffffff;
   background: #0e0e0e;
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -107,7 +115,6 @@ export default {
 .navigations {
   display: flex;
   flex-direction: row;
-  font-family: Manrope;
   font-size: 13px;
   font-weight: 700;
   line-height: 25px;
@@ -116,12 +123,12 @@ export default {
 #assets {
   width: 23.33px;
   height: 20px;
-  top: 32px;
-  left: 1251.5px;
-  gap: 0px;
-  opacity: 0px;
 }
-
+#Hamburger {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+}
 .audiophile,
 .navigations {
   margin-right: 9em;
@@ -139,7 +146,7 @@ a.router-link-active {
 hr {
   width: 80%;
   margin: 0 auto;
-  opacity: 50%;
+  opacity: 25%;
 }
 .backdrop {
   position: fixed;
@@ -219,139 +226,67 @@ dialog {
 /* Tablets / iPad ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   * {
-    margin: 0 -2rem;
-    color: #000000;
-  }
-  .outside {
-    position: relative;
-    color: #ffffff;
-    background: #0e0e0e;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
+    margin: 0 0rem;
   }
   .nav_bar {
+    justify-content: space-between;
+    padding: 2rem 5rem;
+  }
+  #Hamburger {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 15px;
-    padding-bottom: 25px;
-    font-weight: bold;
+    width: 1rem;
+    height: 1rem;
+  }
+  .audiophile {
+    margin: -0.7rem 0rem 0 -23rem;
+    font-size: 25px;
   }
   .navigations {
-    display: flex;
-    flex-direction: row;
-    font-family: Manrope;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 25px;
-    letter-spacing: 2px;
-  }
-  #assets {
-    width: 23.33px;
-    height: 20px;
-    top: 32px;
-    left: 1251.5px;
-    gap: 0px;
-    opacity: 0px;
-  }
-
-  .audiophile,
-  .navigations {
-    margin-right: 9em;
-    color: #ffffff;
-  }
-  a {
-    margin-right: 27px;
-    text-decoration: none;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  a.router-link-active {
-    color: #d87d4a;
+    display: none;
   }
   hr {
-    width: 80%;
-    margin: 0 auto;
-    opacity: 50%;
+    opacity: 25%;
   }
-  .backdrop {
+  /* .backdrop {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 100dvh;
-    /* background: rgba(0, 0, 0, 0.25); */
     background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(1px);
     cursor: pointer;
     z-index: 50;
-  }
+  } */
   .emptycart {
     text-align: center;
+    margin: 3rem 0;
   }
   dialog {
-    position: absolute;
-    top: 120%;
-    left: 69%;
-    transform: translate(-50%, 0%);
-    width: 30%;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    padding: 25px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-    z-index: 100;
-    font-weight: bold;
-    border-radius: 8px;
-  }
-  .cart {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+    top: 110%;
+    width: 50%;
+    padding: 30px;
   }
   .cart h3 {
-    font-size: 18px;
-    letter-spacing: 1.2px;
-    text-align: left;
+    font-size: 20px;
   }
   .cart button {
-    opacity: 50%;
-    font-size: 15px;
-    border: none;
-    background-color: inherit;
-    text-align: left;
+    font-size: 17px;
   }
   .products {
-    height: 15rem;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    height: 18rem;
   }
   .total {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
   }
   .total h3 {
-    font-size: 15px;
-    opacity: 50%;
+    font-size: 17px;
   }
   .total p {
-    font-size: 18px;
+    font-size: 20px;
   }
   .checkout {
-    width: 100%;
-    text-align: center;
-    padding: 7px 0;
-    font-weight: bold;
-    background: #d87d4a;
-    border: 1px solid #d87d4a;
-    color: #fff;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
   }
 }
 
