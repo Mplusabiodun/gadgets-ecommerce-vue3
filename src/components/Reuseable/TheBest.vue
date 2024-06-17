@@ -53,7 +53,7 @@
   font-size: 13px;
   line-height: 25px;
   color: #000000;
-  opacity: 70%;
+  opacity: 80%;
   margin-top: 0.8rem;
 }
 #audiogear_img {
@@ -81,6 +81,7 @@
     width: 35.6rem;
     font-size: 15px;
     margin-top: 2rem;
+    line-height: 25px;
   }
   #audiogear_img {
     width: 100%;

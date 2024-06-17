@@ -5,9 +5,10 @@
   <div class="container2">
     <ul v-for="headphone in headPhones" :key="headphone.id">
       <li>
-        <!-- beginning -->
         <div class="HeadphoneXX">
-          <img id="headphonemarkII" :src="headphone.image" alt="headphone" />
+          <div class="img_div">
+            <img id="headphonemarkII" :src="headphone.image" alt="headphone" />
+          </div>
           <div class="second">
             <p v-if="headphone.new === true" class="new">NEW PRODUCT</p>
             <h1 class="XX99_MARK">{{ headphone.name }}</h1>
@@ -26,61 +27,7 @@
       </li>
     </ul>
 
-    <!-- <div class="HeadphoneXX">
-      <img
-        id="headphonemarkII"
-        src="./pics/headphonemarkII.png"
-        alt="headphone"
-      />
-      <div class="second">
-        <p class="new">NEW PRODUCT</p>
-        <h1 class="XX99_MARK">XX99 Mark II Headphones</h1>
-        <p class="headphoneII_word">
-          The new XX99 Mark II headphones is the pinnacle of pristine audio. It
-          redefines your premium headphone experience by reproducing the
-          balanced depth and precision of studio-quality sound.
-        </p>
-        <button @click="headphoneII" class="see_product">SEE PRODUCT</button>
-      </div>
-    </div> -->
-
-    <!-- <div> -->
-    <!-- <div class="HeadphoneXX">
-      <div class="second formargin">
-        <h1 class="XX99_MARK">XX99 Mark I Headphones</h1>
-        <p class="headphoneI_word">
-          As the gold standard for headphones, the classic XX99 Mark I offers
-          detailed and accurate audio reproduction for audiophiles, mixing
-          engineers, and music aficionados alike in studios and on the go.
-        </p>
-        <button @click="headphoneI" class="see_product">SEE PRODUCT</button>
-      </div>
-      <img
-        id="headphonemarkI"
-        src="./pics/headphonemarkI.png"
-        alt="headphone"
-      />
-    </div> -->
-
-    <!-- </div> -->
-    <!-- <div class="HeadphoneXX">
-      <img
-        id="headphoneXX59"
-        src="./pics/headphoneXX59.png"
-        alt="headphoneXX59"
-      />
-      <div class="second">
-        <h1 class="XX99_MARK">XX59 Headphones</h1>
-        <p class="XX59_word">
-          Enjoy your audio almost anywhere and customize it to your specific
-          tastes with the XX59 headphones. The stylish yet durable versatile
-          wireless headset is a brilliant companion at home or on the move.
-        </p>
-        <button @click="headphoneXX59" class="see_product">SEE PRODUCT</button>
-      </div>
-    </div> -->
-
-    <the-shop></the-shop>
+    <the-shop class="formargin"></the-shop>
     <the-best class="best"></the-best>
   </div>
 </template>
@@ -138,11 +85,10 @@ h2 {
 .HeadphoneXX {
   display: flex;
   flex-direction: row;
-  margin-top: 4rem;
+  margin-top: 5rem;
   text-align: left;
 }
-#headphonemarkII,
-#headphoneXX59 {
+#headphonemarkII {
   width: 24rem;
   height: 26rem;
   margin-right: 10rem;
@@ -167,10 +113,9 @@ h2 {
   line-height: 50px;
   letter-spacing: 1px;
   margin-top: 1rem;
+  font-weight: bold;
 }
-.headphoneII_word,
-.headphoneI_word,
-.XX59_word {
+.headphoneII_word {
   width: 24rem;
   color: #000000;
   margin-top: 14px;
@@ -195,18 +140,72 @@ h2 {
   border-color: #d87d4a;
 }
 .formargin {
-  margin-right: 8.5rem;
-  margin-left: 0;
-}
-#headphonemarkI {
-  width: 27rem;
-  height: 24rem;
-  background: #f1f1f1;
-}
-.headphoneI_word {
-  width: 22.5rem;
+  margin: 5rem -5rem 2rem -1rem;
 }
 .best {
   margin-top: 0;
+}
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  h2 {
+    font-size: 30px;
+    padding: 2.2rem 0;
+    letter-spacing: 1.6px;
+  }
+  .container2 {
+    padding: 1.5rem 3rem 1.5rem 1rem;
+    /* background: red; */
+  }
+  .HeadphoneXX {
+    flex-direction: column;
+    text-align: center;
+  }
+  .img_div {
+    width: 100%;
+    height: 26rem;
+    background: #f1f1f1;
+    margin-right: 1rem;
+  }
+  #headphonemarkII {
+    width: 24rem;
+    height: 26rem;
+    margin: 0 auto;
+  }
+  .second {
+    text-align: center;
+    margin: 2rem auto;
+  }
+  .new {
+    font-size: 14px;
+    opacity: 100%;
+  }
+  .XX99_MARK {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 1rem auto 1.5rem;
+    font-weight: 700;
+  }
+  .headphoneII_word {
+    width: 35rem;
+    opacity: 50%;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .see_product2 {
+    background-color: #d87d4a;
+    border: 1px solid #d87d4a;
+    letter-spacing: 1px;
+  }
+  .formargin {
+    margin: 5rem -1rem 0 2rem;
+  }
+  .best {
+    margin-bottom: 0;
+    margin-left: 2rem;
+  }
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
 }
 </style>

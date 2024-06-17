@@ -5,9 +5,10 @@
   <div class="container2">
     <ul v-for="earphone in earPhones" :key="earphone.id">
       <li>
-        <!-- beginning -->
         <div class="YX1_Earphones">
-          <img id="Earphone" :src="earphone.image" alt="headphone" />
+          <div class="img_div">
+            <img id="Earphone" :src="earphone.image" alt="headphone" />
+          </div>
           <div class="second">
             <p v-if="earphone.new === true" class="new">NEW PRODUCT</p>
             <h1 class="YX1_WIRELESS">{{ earphone.name }}</h1>
@@ -17,34 +18,12 @@
             <router-link :to="'/earphones/' + earphone.id" class="see_product2">
               SEE PRODUCT
             </router-link>
-            <!-- <button @click="earphoneYX1" class="see_product">
-              SEE PRODUCT
-            </button> -->
           </div>
         </div>
-        <!-- End -->
       </li>
     </ul>
 
-    <!-- <div class="YX1_Earphones">
-      <img
-        id="Earphone"
-        src="../Home/pics/YX1_Earphone_upgrade.png"
-        alt="headphone"
-      />
-      <div class="second">
-        <p class="new">NEW PRODUCT</p>
-        <h1 class="YX1_WIRELESS">YX1 WIRELESS EARPHONES</h1>
-        <p class="Earphone_word">
-          Tailor your listening experience with bespoke dynamic drivers from the
-          new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even
-          in noisy environments with its active noise cancellation feature.
-        </p>
-        <button @click="earphoneYX1" class="see_product">SEE PRODUCT</button>
-      </div>
-    </div> -->
-
-    <the-shop></the-shop>
+    <the-shop class="formargin"></the-shop>
     <the-best class="best"></the-best>
   </div>
 </template>
@@ -133,8 +112,73 @@ h2 {
   background-color: #d87d4a;
   border-color: #d87d4a;
 }
+.formargin {
+  margin: 5rem -5rem 2rem -1rem;
+}
 .best {
   margin-top: 0;
-  margin-bottom: 0;
+}
+
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  h2 {
+    font-size: 30px;
+    padding: 2.2rem 0;
+    letter-spacing: 1.6px;
+  }
+  .container2 {
+    padding: 1.5rem 3rem 1.5rem 1rem;
+  }
+  .YX1_Earphones {
+    flex-direction: column;
+    text-align: center;
+  }
+  .img_div {
+    width: 100%;
+    height: 26rem;
+    background: #f1f1f1;
+    margin-right: 1rem;
+  }
+  #Earphone {
+    width: 24rem;
+    height: 26rem;
+    margin: 0 auto;
+  }
+  .second {
+    text-align: center;
+    margin: 2rem auto;
+  }
+  .new {
+    font-size: 14px;
+    opacity: 100%;
+  }
+  .YX1_WIRELESS {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 1rem auto 1.5rem;
+    font-weight: 700;
+  }
+  .Earphone_word {
+    width: 35rem;
+    opacity: 50%;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .see_product2 {
+    background-color: #d87d4a;
+    border: 1px solid #d87d4a;
+    letter-spacing: 1px;
+  }
+  .formargin {
+    margin: 5rem -1rem 0 2rem;
+  }
+  .best {
+    margin-bottom: 0;
+    margin-left: 2rem;
+  }
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
 }
 </style>

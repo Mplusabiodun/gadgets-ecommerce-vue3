@@ -45,7 +45,7 @@ export default {
     return {
       products: [
         {
-          name: "XX99 Mark II Headphones",
+          name: "XX99 MARK II HEADPHONES",
           alias: "XX99 MK II",
           image: headphonemarkIIUpgrade,
           new: true,
@@ -98,7 +98,7 @@ export default {
           ],
         },
         {
-          name: "XX99 Mark I Headphones",
+          name: "XX99 MARK I HEADPHONES",
           alias: "XX99 MK I",
           image: headphonemarkI,
           description:
@@ -146,7 +146,7 @@ export default {
           ],
         },
         {
-          name: "XX59 Headphones",
+          name: "XX59 HEADPHONES",
           alias: "XX59",
           image: headphoneXX59,
           description:
@@ -251,7 +251,7 @@ export default {
           alias: "ZX7",
           image: ZX7SpeakerUpgrade,
           description:
-            "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+            "Stream high quality sound wirelessly with minimal to no loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
           price: 3500,
           perProduct: 1,
           id: "ZX7",
