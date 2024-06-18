@@ -50,7 +50,6 @@
       <img id="big_img" :src="speakerDetails?.live_image[2]" alt="SD13" />
     </div>
 
-    <!-- here -->
     <h2 class="you_may">YOU MAY ALSO LIKE</h2>
     <div class="general">
       <div>
@@ -82,7 +81,7 @@
       </div>
     </div>
 
-    <the-shop></the-shop>
+    <the-shop class="formargin"></the-shop>
     <the-best class="best"></the-best>
   </div>
 </template>
@@ -328,7 +327,7 @@ li {
 /* Tablets / iPad ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
-    padding: 3rem 4rem 0rem;
+    padding: 3rem 4rem 3rem;
   }
   .go_back {
     font-size: 15px;
@@ -386,7 +385,6 @@ li {
     font-size: 32px;
   }
   li {
-    /* margin: -4rem 0 0 24rem; */
     margin: 0rem 0 0 23rem;
     padding: 0rem 0;
     font-size: 15px;
@@ -400,7 +398,6 @@ li {
   #audio_gear,
   #HD11 {
     width: 17rem;
-    /* margin-right: 10rem; */
     border-radius: 1rem;
   }
   #audio_gear {
@@ -427,15 +424,8 @@ li {
     margin: 5rem -1rem 0 -1rem;
   }
   .best {
-    /* padding: 0; */
-    /* margin-bottom: 7rem; */
-    /* padding-bottom: -19rem;
+    margin-bottom: 0;
     margin-left: 0rem;
-    margin-top: 0rem; */
-  }
-  .container_footer {
-    margin-top: 0rem;
-    /* padding: 2rem 3rem; */
   }
 }
 

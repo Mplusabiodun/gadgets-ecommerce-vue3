@@ -24,7 +24,7 @@
 .audiogear_container {
   display: flex;
   flex-direction: row;
-  height: 350px;
+  /* height: 350px; */
   margin-top: 10rem;
   margin-bottom: 0;
 }

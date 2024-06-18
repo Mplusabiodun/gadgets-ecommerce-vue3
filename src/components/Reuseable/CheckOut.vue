@@ -179,7 +179,7 @@
             :src="firstOfCart.cartImage"
             :alt="firstOfCart.cartName"
           />
-          <div class="name_price">
+          <div class="dialog_name_price">
             <h3>{{ firstOfCart.cartName }}</h3>
             <p>$ {{ firstOfCart.cartPrice }}</p>
           </div>
@@ -252,13 +252,6 @@ export default {
         console.log(this.cart);
       }
     },
-    // validate() {
-    //   if (this.userName === "") {
-    //     this.inputValidity = "invalid";
-    //   } else {
-    //     this.inputValidity = "valid";
-    //   }
-    // },
   },
   created() {
     for (const products of this.cart) {
@@ -277,7 +270,6 @@ export default {
 }
 .invalid {
   border: 2px solid red;
-  /* border-color: red; */
 }
 .valid {
   border: 1px solid #cfcfcf;
@@ -458,6 +450,7 @@ img {
   border: 1px solid #d87d4a;
   color: #fff;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 .invalid_text {
   margin-top: 5px;
@@ -543,15 +536,16 @@ dialog {
   width: 2.8rem;
   height: 2.8rem;
 }
-.name_price {
+.dialog_name_price {
+  margin-right: 2rem;
   text-align: left;
 }
-.name_price h3 {
+.dialog_name_price h3 {
   font-size: 15px;
   text-align: left;
   font-weight: 700;
 }
-.name_price p {
+.dialog_name_price p {
   font-size: 14px;
   text-align: left;
   opacity: 50%;
@@ -592,5 +586,101 @@ hr {
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 1px;
+}
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    margin: 3rem 4.5rem 0 4.5rem;
+  }
+  .container2 {
+    flex-direction: column;
+  }
+  .checkout {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .go_back {
+    margin-bottom: 3rem;
+  }
+  input {
+    width: 16.8rem;
+  }
+  .checkout_text {
+    font-size: 32px;
+  }
+  .billing,
+  .shipping,
+  .payment {
+    letter-spacing: 0.9px;
+  }
+  .name_email input {
+    width: 16.8rem;
+  }
+  .e_money,
+  .c_delivery {
+    width: 16.8rem;
+    margin: 0 0 1rem 11.8rem;
+  }
+  .c_delivery {
+    margin: 0 0 1rem 17.9rem;
+  }
+
+  /* SUMMARY */
+  .summary {
+    width: 100%;
+  }
+
+  .name_price {
+    margin: 0 0 0 -22rem;
+  }
+  .cart_name {
+    letter-spacing: 1px;
+  }
+  .cart_price {
+    letter-spacing: 1px;
+  }
+  .total {
+    margin: 1rem 0;
+    letter-spacing: 1px;
+  }
+  .total h3 {
+    font-size: 15px;
+  }
+  .continue {
+    letter-spacing: 2px;
+  }
+
+  /* Dialog */
+  dialog {
+    width: 65%;
+    letter-spacing: 1px;
+  }
+  .thankyou {
+    font-size: 32px;
+  }
+  .confimationemail {
+    font-size: 17px;
+  }
+
+  .dialog_name_price h3 {
+    font-size: 17px;
+  }
+  .dialog_name_price p {
+    font-size: 16px;
+  }
+  .number {
+    font-size: 16px;
+  }
+  .andothers {
+    letter-spacing: 0.5px;
+  }
+  .inner_div2 h3 {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
 }
 </style>
