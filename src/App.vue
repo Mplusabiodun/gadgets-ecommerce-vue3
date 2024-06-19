@@ -402,13 +402,6 @@ export default {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
-  .container_header {
-    /* width: 100%; */
-    /* color: #ffffff; */
-    /* background: #0e0e0e; */
-    /* padding: 20px 50px 50px 50px; */
-    margin-bottom: 2rem;
-  }
   .container_footer {
     /* margin-top: 23rem; */
     padding: 3rem 2rem;

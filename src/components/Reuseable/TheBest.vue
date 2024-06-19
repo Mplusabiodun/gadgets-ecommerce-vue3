@@ -87,7 +87,6 @@
     width: 100%;
     height: 18.7rem;
     padding-left: 0;
-    /* margin-bottom: 2rem; */
   }
 }
 
@@ -101,6 +100,7 @@
     width: 100%;
     text-align: center;
     margin-bottom: 2rem;
+    padding: 3rem 0 0 0rem;
   }
   .gear_name {
     width: 20rem;
@@ -118,7 +118,6 @@
     width: 100%;
     height: 18.7rem;
     padding-left: 0;
-    /* margin-bottom: 2rem; */
   }
 }
 </style>

@@ -146,7 +146,8 @@ h2 {
   margin-top: 0;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
   h2 {
     font-size: 30px;
     padding: 2.2rem 0;
@@ -154,7 +155,6 @@ h2 {
   }
   .container2 {
     padding: 1.5rem 3rem 1.5rem 1rem;
-    /* background: red; */
   }
   .HeadphoneXX {
     flex-direction: column;
@@ -207,5 +207,43 @@ h2 {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  h2 {
+    padding: 1rem 0;
+  }
+  .container2 {
+    padding: 0rem 1rem 1.5rem 0rem;
+  }
+  .HeadphoneXX {
+    flex-direction: column;
+    text-align: center;
+  }
+  .img_div {
+    width: 20.4rem;
+    height: 22rem;
+    margin-right: 0rem;
+  }
+  #headphonemarkII {
+    width: 20.4rem;
+    height: 22rem;
+  }
+  .new {
+    font-weight: 700;
+  }
+  .XX99_MARK {
+    font-size: 2.5rem;
+    margin: 1rem auto 1.1rem;
+  }
+  .headphoneII_word {
+    width: 20.4rem;
+  }
+  .see_product2 {
+    margin: 0 0 0 -1.5rem;
+  }
+  .formargin {
+    margin: 5rem 0rem 0 0rem;
+  }
+  .best {
+    margin: 0 1rem 0 2rem;
+  }
 }
 </style>

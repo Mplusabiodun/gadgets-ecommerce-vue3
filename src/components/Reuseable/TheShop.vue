@@ -60,9 +60,7 @@ export default {
 .speakers,
 .earphones {
   width: 350px;
-  /* height: 284px; */
   margin-bottom: 3rem;
-  /* background: grey; */
 }
 .samephones {
   width: 155px;
@@ -91,15 +89,6 @@ export default {
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .general {
     margin-top: 1.5rem;
-  }
-  .general {
-    margin-top: 1.5rem;
-
-    /* display: flex; */
-    flex-direction: column;
-    justify-content: center;
-    /* text-align: center; */
-    /* font-weight: bold; */
   }
   .headphones,
   .speakers,
@@ -130,29 +119,27 @@ export default {
 @media only screen and (max-width: 767px) {
   .general {
     margin-top: 1.5rem;
-  }
-  .headphones,
-  .speakers,
-  .earphones {
-    width: 243px;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: center;
   }
   .samephones {
-    width: 7rem;
-    height: 9rem;
+    width: 9rem;
+    height: 11rem;
+    margin: -1rem 0;
   }
   .phonewords {
-    font-size: 15px;
-    margin: 0 0 3px 0;
+    font-size: 18px;
+    margin: 0;
     letter-spacing: 1px;
   }
   .shop {
     letter-spacing: 1px;
-    font-size: 13px;
-    opacity: 70%;
+    font-size: 16px;
+    opacity: 50%;
+    font-weight: bold;
   }
   .arrow {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 </style>

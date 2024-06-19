@@ -62,12 +62,6 @@ export default {
 };
 </script>
 <style scoped>
-/* * {
-  background: red;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-} */
 .container {
   width: 100%;
   color: #ffffff;
@@ -333,93 +327,95 @@ export default {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
-  .container {
-    padding: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-  .XX99 {
-    background-image: url("@/assets/markll_background.png");
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 43rem;
-    width: 100%;
-    margin-left: -0.1rem;
-    margin-top: -3rem;
-  }
   .second {
-    margin: 11rem auto 0;
-    text-align: center;
+    margin: 12rem auto 0;
+  }
+  .new {
+    font-size: 17px;
   }
   .XX99_MARK {
-    font-size: 3.4rem;
+    font-size: 3.1rem;
   }
   .word {
-    width: 23rem;
+    opacity: 65%;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 1px;
   }
   .see_product {
-    background-color: #d87d4a;
-    border: 1px solid #d87d4a;
-    letter-spacing: 1px;
+    margin-top: 2rem;
   }
   #bitmap {
     display: none;
   }
   .container2 {
-    width: 100%;
-    color: #0e0e0e;
-    padding: 0rem 0rem;
-    /* padding: 0rem 3rem; */
+    padding: 0rem 2rem;
   }
   .ZXP_container {
-    flex-direction: column;
-    text-align: center;
+    border-radius: 15px;
   }
   #ZX9_Speaker {
-    width: 28%;
-    height: 14rem;
-    margin: 3rem auto 0;
+    width: 10.75rem;
+    height: 13rem;
   }
   #ZX9_inner {
-    margin: 4rem auto;
+    margin: 3rem auto;
     text-align: center;
   }
   #ZX9_name {
     margin: 0 auto;
     letter-spacing: 3px;
-    font-size: 56px;
-    line-height: 3.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
   }
   #upgrade {
-    margin: 15px auto 17px;
-    font-size: 17px;
     line-height: 25px;
-    text-align: center;
-    width: 50%;
+    width: 80%;
   }
   #ZX7 {
-    background-image: url("@/assets/ZX7_speaker_backg.png");
+    /* background-image: url("@/assets/ZX7_speaker_backg.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding: 7rem 0 0 6rem;
+  }
+  #ZX7 {
+    background-image: url("@/assets/ZX7_Mobile_background.png");
+    padding: 7rem 0 0 2rem;
+    border-radius: 15px;
+  }
+  #ZX7_NAME {
+    font-size: 30px;
+    line-height: 25px;
+  }
+  .see_product3 {
+    border: 1.2px solid #0e0e0e;
+    letter-spacing: 2px;
   }
   .YX1_Container {
-    height: 300px;
-    display: flex;
-    flex-direction: row;
+    /* width: 100%; */
+    /* display: flex; */
+    flex-direction: column;
+    margin: 0 0 10rem 0;
+  }
+  #YX1_IMG {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 15px;
   }
   #YX1_Container2 {
-    width: 50%;
-    margin-left: 1rem;
-    padding: 6rem 0 0 2rem;
+    width: 100%;
+    margin-left: 0rem;
+    padding: 3rem 3rem;
     text-align: left;
+    border-radius: 15px;
   }
-  .YX1_Name {
+  /* .YX1_Name {
     text-align: left;
     font-size: 28px;
     letter-spacing: 1px;
-  }
+  } */
 }
 </style>

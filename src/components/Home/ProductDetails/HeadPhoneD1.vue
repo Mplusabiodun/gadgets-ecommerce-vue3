@@ -332,7 +332,8 @@ li {
   margin-top: 0;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
   .container {
     padding: 3rem 4rem;
   }
@@ -438,5 +439,112 @@ li {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  .container {
+    padding: 3rem 4rem;
+  }
+  .go_back {
+    font-size: 17px;
+  }
+  .HeadphoneXX {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    text-align: left;
+  }
+  #headphonemarkII {
+    width: 20.4rem;
+    height: 22rem;
+    margin-right: 0rem;
+  }
+  .new {
+    opacity: 100%;
+  }
+  .XX99_MARK {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    line-height: 32px;
+    font-weight: 700;
+  }
+  .headphoneII_word {
+    width: 20.5rem;
+    margin: 2rem 0;
+    opacity: 75%;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .price {
+    margin: 0.5rem 0 1.3rem;
+  }
+  .addto_cart {
+    background-color: #d87d4a;
+    border: 1px solid #d87d4a;
+    letter-spacing: 2px;
+  }
+
+  /* Features and in d box styling */
+  .container2 {
+    flex-direction: column;
+    margin: 7rem 0rem;
+  }
+  .container3 {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  .features {
+    font-size: 32px;
+  }
+  .content {
+    font-size: 15px;
+    opacity: 65%;
+    margin-bottom: 2rem;
+  }
+  .box {
+    margin-left: 0rem;
+    font-size: 32px;
+  }
+  li {
+    margin: -4rem 0 0 24rem;
+    padding: 1.5rem 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  /* three images styling */
+  .img_cont {
+    margin: 4rem 0;
+  }
+  #audio_gear,
+  #HD11 {
+    width: 17rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+  }
+  #audio_gear {
+    margin-bottom: 1rem;
+  }
+  #big_img {
+    width: 70rem;
+  }
+  /* YOU MAY ALSO LIKE */
+  .you_may {
+    font-size: 32px;
+    margin: 8rem 0 2rem;
+  }
+  .samephones {
+    width: 12rem;
+    height: 14rem;
+  }
+
+  .phonewords {
+    font-size: 22px;
+    margin: 1rem 0;
+  }
+  .formargin {
+    margin: 5rem -1rem 0 -1rem;
+  }
+  .best {
+    margin-bottom: 0;
+    margin-left: 0rem;
+  }
 }
 </style>

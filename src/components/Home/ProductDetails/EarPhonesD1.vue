@@ -335,7 +335,8 @@ li {
   margin-top: 0;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
   .container {
     padding: 3rem 4rem 3rem;
   }

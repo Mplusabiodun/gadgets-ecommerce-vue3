@@ -26,4 +26,11 @@ p {
   color: black;
   font-weight: bold;
 }
+/* Tablets / iPad ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
+}
 </style>
