@@ -17,12 +17,6 @@
       />
     </nav>
     <hr />
-    <!-- <nav class="navigations_duplicate">
-        <router-link to="/homepage">HOME</router-link>
-        <router-link to="/headphones">HEADPHONES</router-link>
-        <router-link to="/speakers">SPEAKERS</router-link>
-        <router-link to="/earphones">EARPHONES</router-link>
-      </nav> -->
 
     <div v-if="addToCart" @click="addToCart = false" class="backdrop"></div>
     <dialog open v-if="addToCart">
@@ -224,7 +218,8 @@ dialog {
   letter-spacing: 2px;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
   * {
     margin: 0 0rem;
   }
@@ -238,7 +233,7 @@ dialog {
     height: 1rem;
   }
   .audiophile {
-    margin: -0.7rem 0rem 0 -23rem;
+    margin: -0.4rem 0rem 0 -23rem;
     font-size: 25px;
   }
   .navigations {
@@ -247,17 +242,6 @@ dialog {
   hr {
     opacity: 25%;
   }
-  /* .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100dvh;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(1px);
-    cursor: pointer;
-    z-index: 50;
-  } */
   .emptycart {
     text-align: center;
     margin: 3rem 0;
@@ -292,5 +276,68 @@ dialog {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  /* * {
+    margin: 0 0rem;
+  } */
+  .nav_bar {
+    justify-content: space-between;
+    padding: 1.5rem 2.2rem;
+  }
+  #Hamburger {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .audiophile {
+    margin: -0.4rem 0 0 0;
+    font-size: 1.8rem;
+  }
+  #assets {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  hr {
+    opacity: 50%;
+  }
+  .emptycart {
+    text-align: center;
+    margin: 3rem 0;
+  }
+  dialog {
+    top: 120%;
+    /* left: 45%; */
+    left: 37%;
+    width: 90%;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 0 3.5rem 0 3rem;
+  }
+  .cart h3 {
+    font-size: 20px;
+  }
+  .cart button {
+    font-size: 20x;
+    letter-spacing: 2px;
+  }
+  .emptycart {
+    font-size: 22px;
+    letter-spacing: 2px;
+    line-height: 2.2rem;
+  }
+  .products {
+    height: 18rem;
+  }
+  .total {
+    margin: 1.5rem 0;
+  }
+  .total h3 {
+    font-size: 22px;
+  }
+  .total p {
+    font-size: 22px;
+  }
+  .checkout {
+    letter-spacing: 3px;
+    font-size: 22px;
+  }
 }
 </style>

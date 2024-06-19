@@ -62,6 +62,12 @@ export default {
 };
 </script>
 <style scoped>
+/* * {
+  background: red;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+} */
 .container {
   width: 100%;
   color: #ffffff;
@@ -235,7 +241,8 @@ export default {
 }
 
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
   .container {
     padding: 0;
     margin: 0 0 5rem 0;
@@ -300,9 +307,6 @@ export default {
     text-align: center;
     width: 50%;
   }
-  /* .see_product2 {
-    letter-spacing: 1px;
-  } */
   #ZX7 {
     background-image: url("@/assets/ZX7_speaker_backg.png");
     background-size: cover;
@@ -329,5 +333,93 @@ export default {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  .container {
+    padding: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  .XX99 {
+    background-image: url("@/assets/markll_background.png");
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 43rem;
+    width: 100%;
+    margin-left: -0.1rem;
+    margin-top: -3rem;
+  }
+  .second {
+    margin: 11rem auto 0;
+    text-align: center;
+  }
+  .XX99_MARK {
+    font-size: 3.4rem;
+  }
+  .word {
+    width: 23rem;
+  }
+  .see_product {
+    background-color: #d87d4a;
+    border: 1px solid #d87d4a;
+    letter-spacing: 1px;
+  }
+  #bitmap {
+    display: none;
+  }
+  .container2 {
+    width: 100%;
+    color: #0e0e0e;
+    padding: 0rem 0rem;
+    /* padding: 0rem 3rem; */
+  }
+  .ZXP_container {
+    flex-direction: column;
+    text-align: center;
+  }
+  #ZX9_Speaker {
+    width: 28%;
+    height: 14rem;
+    margin: 3rem auto 0;
+  }
+  #ZX9_inner {
+    margin: 4rem auto;
+    text-align: center;
+  }
+  #ZX9_name {
+    margin: 0 auto;
+    letter-spacing: 3px;
+    font-size: 56px;
+    line-height: 3.5rem;
+  }
+  #upgrade {
+    margin: 15px auto 17px;
+    font-size: 17px;
+    line-height: 25px;
+    text-align: center;
+    width: 50%;
+  }
+  #ZX7 {
+    background-image: url("@/assets/ZX7_speaker_backg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .YX1_Container {
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+  }
+  #YX1_Container2 {
+    width: 50%;
+    margin-left: 1rem;
+    padding: 6rem 0 0 2rem;
+    text-align: left;
+  }
+  .YX1_Name {
+    text-align: left;
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
 }
 </style>

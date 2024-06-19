@@ -93,5 +93,32 @@
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  .audiogear_container {
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+  #audiogear_container2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .gear_name {
+    width: 20rem;
+    font-size: 28px;
+    text-align: center;
+    line-height: 2.6rem;
+  }
+  .gear_word {
+    width: 20.4rem;
+    font-size: 15px;
+    margin-top: 2rem;
+    line-height: 25px;
+  }
+  #audiogear_img {
+    width: 100%;
+    height: 18.7rem;
+    padding-left: 0;
+    /* margin-bottom: 2rem; */
+  }
 }
 </style>

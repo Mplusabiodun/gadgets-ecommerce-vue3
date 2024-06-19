@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <nav class="nav_bar2">
       <h3>audiophile</h3>
       <ul class="navigations">
@@ -124,5 +124,43 @@ img {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  .container {
+    padding-bottom: 3rem;
+    text-align: center;
+  }
+  .nav_bar2 {
+    flex-direction: column;
+  }
+  h3 {
+    font-size: 35px;
+    margin: 0 auto;
+  }
+  .navigations {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    margin: 2rem 0 1.5rem -4rem;
+  }
+  li {
+    margin-bottom: 2em;
+  }
+  .footer_words {
+    width: 98%;
+    margin: -1rem auto 5rem;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+  }
+  .copy_right {
+    font-size: 16px;
+    margin: -5rem 0 0;
+    text-align: center;
+  }
+  #icons {
+    display: inline;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 </style>
