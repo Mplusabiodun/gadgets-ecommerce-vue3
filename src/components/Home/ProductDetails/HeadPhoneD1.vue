@@ -56,29 +56,37 @@
     <h2 class="you_may">YOU MAY ALSO LIKE</h2>
     <div class="general">
       <div>
-        <img
-          class="samephones"
-          src="../pics/headphonemarkI.png"
-          alt="headphones"
-        />
+        <div class="samephone_cont">
+          <img
+            class="samephones"
+            src="../pics/headphonemarkI.png"
+            alt="headphones"
+          />
+        </div>
         <p class="phonewords">XX99 MARK I</p>
         <button class="addto_cart">SEE PRODUCT</button>
       </div>
-      <div class="speakers">
-        <img
-          class="samephones"
-          src="../pics/headphoneXX59.png"
-          alt="speakers"
-        />
+      <div>
+        <div class="samephone_cont">
+          <img
+            class="samephones"
+            src="../pics/headphoneXX59.png"
+            alt="speakers"
+          />
+        </div>
+
         <p class="phonewords">XX59</p>
         <button class="addto_cart">SEE PRODUCT</button>
       </div>
-      <div class="phones earphones">
-        <img
-          class="samephones"
-          src="../pics/ZX9_Speaker_upgrade.png"
-          alt="earphones"
-        />
+      <div>
+        <div class="samephone_cont">
+          <img
+            class="samephones"
+            src="../pics/ZX9_Speaker_upgrade.png"
+            alt="earphones"
+          />
+        </div>
+
         <p class="phonewords">ZX9 SPEAKER</p>
         <button class="addto_cart">SEE PRODUCT</button>
       </div>
@@ -440,7 +448,7 @@ li {
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
   .container {
-    padding: 3rem 4rem;
+    padding: 3rem 2.4rem;
   }
   .go_back {
     font-size: 17px;
@@ -458,93 +466,84 @@ li {
   }
   .new {
     opacity: 100%;
+    font-weight: 600;
   }
   .XX99_MARK {
     font-size: 2rem;
-    margin-top: 1.5rem;
-    line-height: 32px;
-    font-weight: 700;
   }
   .headphoneII_word {
-    width: 20.5rem;
-    margin: 2rem 0;
-    opacity: 75%;
-    font-size: 15px;
-    line-height: 25px;
-  }
-  .price {
-    margin: 0.5rem 0 1.3rem;
-  }
-  .addto_cart {
-    background-color: #d87d4a;
-    border: 1px solid #d87d4a;
-    letter-spacing: 2px;
+    letter-spacing: 0.6px;
   }
 
   /* Features and in d box styling */
-  .container2 {
-    flex-direction: column;
-    margin: 7rem 0rem;
-  }
-  .container3 {
-    width: 100%;
-    margin-bottom: 5rem;
-  }
-  .features {
-    font-size: 32px;
-  }
   .content {
-    font-size: 15px;
-    opacity: 65%;
-    margin-bottom: 2rem;
+    width: 20.4rem;
+    letter-spacing: 0.6px;
   }
   .box {
-    margin-left: 0rem;
-    font-size: 32px;
+    word-spacing: -0.01rem;
+    margin-bottom: 2.5rem;
   }
   li {
-    margin: -4rem 0 0 24rem;
-    padding: 1.5rem 0;
-    font-size: 15px;
+    margin: 0rem 0 0 -2rem;
+    padding: 0;
     letter-spacing: 1px;
   }
 
   /* three images styling */
   .img_cont {
     margin: 4rem 0;
+    flex-direction: column;
+    justify-content: center;
   }
   #audio_gear,
   #HD11 {
-    width: 17rem;
-    margin-right: 1rem;
+    width: 100%;
+    height: 15rem;
+    margin-right: 0rem;
     border-radius: 1rem;
-  }
-  #audio_gear {
     margin-bottom: 1rem;
   }
   #big_img {
-    width: 70rem;
+    width: 100%;
+    height: 26rem;
+    overflow: hidden;
+    border-radius: 1rem;
   }
   /* YOU MAY ALSO LIKE */
+  .general {
+    flex-direction: column;
+    justify-content: center;
+  }
   .you_may {
-    font-size: 32px;
-    margin: 8rem 0 2rem;
+    font-size: 20px;
+    margin: 6rem 0 2rem;
+  }
+  .samephone_cont {
+    width: 100%;
+    background: #f1f1f1;
+    margin-bottom: 1rem;
   }
   .samephones {
-    width: 12rem;
-    height: 14rem;
+    width: 4.5rem;
+    height: 6rem;
+    margin: auto;
   }
-
   .phonewords {
-    font-size: 22px;
+    font-size: 18px;
     margin: 1rem 0;
   }
-  .formargin {
+  .general .addto_cart {
+    width: 8.5rem;
+    height: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  /* .formargin {
     margin: 5rem -1rem 0 -1rem;
   }
   .best {
     margin-bottom: 0;
     margin-left: 0rem;
-  }
+  } */
 }
 </style>

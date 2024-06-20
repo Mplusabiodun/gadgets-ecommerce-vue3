@@ -53,29 +53,35 @@
     <h2 class="you_may">YOU MAY ALSO LIKE</h2>
     <div class="general">
       <div>
-        <img
-          class="samephones"
-          src="../pics/ZX7_Speaker_upgrade.png"
-          alt="headphones"
-        />
+        <div class="samephone_cont">
+          <img
+            class="samephones"
+            src="../pics/ZX7_Speaker_upgrade.png"
+            alt="headphones"
+          />
+        </div>
         <p class="phonewords">ZX7 SPEAKER</p>
         <button class="addto_cart">SEE PRODUCT</button>
       </div>
-      <div class="speakers">
-        <img
-          class="samephones"
-          src="../pics/headphonemarkI.png"
-          alt="speakers"
-        />
+      <div>
+        <div class="samephone_cont">
+          <img
+            class="samephones"
+            src="../pics/headphonemarkI.png"
+            alt="speakers"
+          />
+        </div>
         <p class="phonewords">XX99 MARK I</p>
         <button class="addto_cart">SEE PRODUCT</button>
       </div>
-      <div class="phones earphones">
-        <img
-          class="samephones"
-          src="../pics/headphoneXX59.png"
-          alt="earphones"
-        />
+      <div>
+        <div class="samephone_cont">
+          <img
+            class="samephones"
+            src="../pics/headphoneXX59.png"
+            alt="earphones"
+          />
+        </div>
         <p class="phonewords">XX59</p>
         <button class="addto_cart">SEE PRODUCT</button>
       </div>
@@ -431,5 +437,103 @@ li {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  .container {
+    padding: 3rem 2.4rem;
+  }
+  .go_back {
+    font-size: 17px;
+  }
+  .HeadphoneXX {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    text-align: left;
+  }
+  #headphonemarkII {
+    width: 20.4rem;
+    height: 22rem;
+    margin-right: 0rem;
+  }
+  .new {
+    opacity: 100%;
+    font-weight: 600;
+  }
+  .XX99_MARK {
+    font-size: 2rem;
+  }
+  .headphoneII_word {
+    letter-spacing: 0.6px;
+  }
+
+  /* Features and in d box styling */
+  .content {
+    width: 20.4rem;
+    letter-spacing: 0.6px;
+  }
+  .box {
+    word-spacing: -0.01rem;
+    margin-bottom: 2.5rem;
+  }
+  li {
+    margin: 0rem 0 0 -2rem;
+    padding: 0;
+    letter-spacing: 1px;
+  }
+
+  /* three images styling */
+  .img_cont {
+    margin: 4rem 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #audio_gear,
+  #HD11 {
+    width: 100%;
+    height: 15rem;
+    margin-right: 0rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  #big_img {
+    width: 100%;
+    height: 26rem;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+  /* YOU MAY ALSO LIKE */
+  .general {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .you_may {
+    font-size: 20px;
+    margin: 6rem 0 2rem;
+  }
+  .samephone_cont {
+    width: 100%;
+    background: #f1f1f1;
+    margin-bottom: 1rem;
+  }
+  .samephones {
+    width: 4.5rem;
+    height: 6rem;
+    margin: auto;
+  }
+  .phonewords {
+    font-size: 18px;
+    margin: 1rem 0;
+  }
+  .general .addto_cart {
+    width: 8.5rem;
+    height: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  /* .formargin {
+    margin: 5rem -1rem 0 -1rem;
+  }
+  .best {
+    margin-bottom: 0;
+    margin-left: 0rem;
+  } */
 }
 </style>
