@@ -97,7 +97,8 @@ img {
   font-size: 14px;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
   .nav_bar2 {
     flex-direction: column;
   }

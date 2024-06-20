@@ -27,10 +27,23 @@ p {
   font-weight: bold;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
+  div {
+    margin: 5rem auto 20rem;
+    max-width: 70%;
+  }
+  h2,
+  p {
+    line-height: 35px;
+  }
 }
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  div {
+    margin: 5rem 2rem 20rem;
+    max-width: 100%;
+  }
 }
 </style>

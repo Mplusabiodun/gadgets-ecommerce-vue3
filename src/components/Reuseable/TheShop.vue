@@ -86,7 +86,8 @@ export default {
   font-weight: 900;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px)  */
+@media only screen and (max-width: 1024px) {
   .general {
     margin-top: 1.5rem;
   }

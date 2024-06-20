@@ -588,7 +588,8 @@ hr {
   letter-spacing: 1px;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
   .container {
     margin: 3rem 4.5rem 0 4.5rem;
   }
@@ -682,5 +683,94 @@ hr {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
+  .container {
+    margin: 3rem 4.5rem 0 4.5rem;
+  }
+  .container2 {
+    flex-direction: column;
+  }
+  .checkout {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .go_back {
+    margin-bottom: 3rem;
+  }
+  input {
+    width: 16.8rem;
+  }
+  .checkout_text {
+    font-size: 32px;
+  }
+  .billing,
+  .shipping,
+  .payment {
+    letter-spacing: 0.9px;
+  }
+  .name_email input {
+    width: 16.8rem;
+  }
+  .e_money,
+  .c_delivery {
+    width: 16.8rem;
+    margin: 0 0 1rem 11.8rem;
+  }
+  .c_delivery {
+    margin: 0 0 1rem 17.9rem;
+  }
+
+  /* SUMMARY */
+  .summary {
+    width: 100%;
+  }
+
+  .name_price {
+    margin: 0 0 0 -22rem;
+  }
+  .cart_name {
+    letter-spacing: 1px;
+  }
+  .cart_price {
+    letter-spacing: 1px;
+  }
+  .total {
+    margin: 1rem 0;
+    letter-spacing: 1px;
+  }
+  .total h3 {
+    font-size: 15px;
+  }
+  .continue {
+    letter-spacing: 2px;
+  }
+
+  /* Dialog */
+  dialog {
+    width: 65%;
+    letter-spacing: 1px;
+  }
+  .thankyou {
+    font-size: 32px;
+  }
+  .confimationemail {
+    font-size: 17px;
+  }
+
+  .dialog_name_price h3 {
+    font-size: 17px;
+  }
+  .dialog_name_price p {
+    font-size: 16px;
+  }
+  .number {
+    font-size: 16px;
+  }
+  .andothers {
+    letter-spacing: 0.5px;
+  }
+  .inner_div2 h3 {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
 }
 </style>

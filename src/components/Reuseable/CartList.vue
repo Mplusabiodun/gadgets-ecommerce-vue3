@@ -15,20 +15,6 @@
 <script>
 export default {
   props: ["cartList"],
-  data() {
-    return {};
-  },
-  methods: {
-    // add() {
-    //   return this.numberOfProduct + 1;
-    // },
-    // sub() {
-    //   this.numberOfProduct -= 1;
-    //   if (this.numberOfProduct < 1) {
-    //     return (this.numberOfProduct = 1);
-    //   }
-    // },
-  },
 };
 </script>
 
@@ -84,5 +70,64 @@ p {
 }
 .sub {
   margin-left: 5px;
+}
+/* Tablets / iPad ----------- */
+/* and (min-width: 768px) */
+@media only screen and (max-width: 1024px) {
+}
+
+/* Mobile ----------- */
+@media only screen and (max-width: 767px) {
+  /* * {
+    color: #000000;
+  } */
+  li {
+    /* display: flex; */
+    /* flex-direction: row; */
+    margin-top: 1.5rem;
+    /* justify-content: space-between;
+    align-items: center;
+    font-weight: bold; */
+  }
+  img {
+    width: 4rem;
+    height: 4rem;
+    /* margin-left: -2.4rem; */
+  }
+  .name_price {
+    margin-left: -1rem;
+    /* text-align: left; */
+  }
+  h3 {
+    font-size: 16px;
+    /* font-weight: 700; */
+    /* text-align: left; */
+  }
+  p {
+    font-size: 15px;
+    /* font-weight: 700; */
+    /* text-align: left; */
+    /* opacity: 50%; */
+    /* margin-top: 3px; */
+  }
+  .number {
+    /* width: 5.5rem;
+    height: 2rem;
+    text-align: center;
+    background: #f1f1f1;
+    border: 1px solid #f1f1f1; */
+    font-size: 16px;
+    /* font-weight: bold; */
+  }
+  /* .figure {
+    margin: 0 1.2rem;
+  } */
+  .sub,
+  .add {
+    font-size: 19px;
+  }
+  /* .sub {
+    margin-left: 5px;
+  } */
 }
 </style>

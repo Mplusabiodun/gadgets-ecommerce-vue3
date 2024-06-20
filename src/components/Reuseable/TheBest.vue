@@ -61,7 +61,8 @@
   padding-left: 2rem;
 }
 /* Tablets / iPad ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* and (min-width: 768px)  */
+@media only screen and (max-width: 1024px) {
   .audiogear_container {
     flex-direction: column;
     margin: 2rem 0;
