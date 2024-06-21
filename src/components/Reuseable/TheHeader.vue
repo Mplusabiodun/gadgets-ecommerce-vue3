@@ -1,7 +1,12 @@
 <template>
   <div class="outside">
     <nav class="nav_bar">
-      <img id="Hamburger" src="@\assets\Hamburger.png" alt="Hamburger" />
+      <img
+        id="Hamburger"
+        src="@\assets\Hamburger.png"
+        alt="Hamburger"
+        @click="hamburgerDisplay"
+      />
       <h3 class="audiophile">audiophile</h3>
       <nav class="navigations">
         <router-link to="/homepage">HOME</router-link>
@@ -39,6 +44,17 @@
         <button @click="checkOut" class="checkout">CHECKOUT</button>
       </div>
     </dialog>
+
+    <dialog open v-if="hamburger === true" class="hamburger">
+      <nav class="navigation2">
+        <ul>
+          <li @click="home">HOME</li>
+          <li @click="headphones">HEADPHONES</li>
+          <li @click="speaker">SPEAKERS</li>
+          <li @click="earphone">EARPHONES</li>
+        </ul>
+      </nav>
+    </dialog>
   </div>
 </template>
 
@@ -55,9 +71,30 @@ export default {
       addToCart: false,
       noOfSelectedProduct: 0,
       total: 0,
+      hamburger: false,
     };
   },
+  computed: {},
   methods: {
+    hamburgerDisplay() {
+      this.hamburger = !this.hamburger;
+    },
+    home() {
+      this.$router.push("/homepage");
+      this.hamburger = false;
+    },
+    headphones() {
+      this.$router.push("/headphones");
+      this.hamburger = false;
+    },
+    speaker() {
+      this.$router.push("/speakers");
+      this.hamburger = false;
+    },
+    earphone() {
+      this.$router.push("/earphones");
+      this.hamburger = false;
+    },
     toCart() {
       this.addToCart = !this.addToCart;
       this.noOfSelectedProduct = this.cart.length;
@@ -86,7 +123,6 @@ export default {
 * {
   color: #000000;
 }
-
 .outside {
   position: relative;
   color: #ffffff;
@@ -217,6 +253,41 @@ dialog {
   color: #fff;
   letter-spacing: 2px;
 }
+
+/* HAMBURGER */
+/* .hamburger {
+  position: fixed;
+  top: 25%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  z-index: 100;
+} */
+.hamburger {
+  position: absolute;
+  top: 75%;
+  left: 19%;
+  transform: translate(-50%, 0%);
+  width: 40%;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  font-weight: bold;
+  border-radius: 8px;
+}
+.hamburger li {
+  list-style-type: none;
+  font-size: 15px;
+  margin: 1rem 0 1rem -1rem;
+}
+
 /* Tablets / iPad ----------- */
 /* and (min-width: 768px) */
 @media only screen and (max-width: 1024px) {

@@ -229,8 +229,8 @@ export default {
     },
     backDrop() {
       this.continueToPay = false;
-      this.$router.push("/homepage");
-      this.cart.splice(0, this.cart.length);
+      // this.$router.push("/homepage");
+      // this.cart.splice(0, this.cart.length);
     },
     proceedToPay() {
       if (
@@ -479,7 +479,6 @@ dialog {
   left: 0;
   right: 0;
   height: 100dvh;
-  /* background: rgba(0, 0, 0, 0.25); */
   background-color: rgba(0, 0, 0, 0.25);
   /* backdrop-filter: blur(1px); */
   cursor: pointer;
@@ -575,6 +574,7 @@ hr {
   width: 40%;
   padding-left: 1rem;
 }
+
 .inner_div2 h3 {
   color: #fff;
   margin-bottom: 5px;
@@ -684,78 +684,92 @@ hr {
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
   .container {
-    margin: 3rem 4.5rem 0 4.5rem;
-  }
-  .container2 {
-    flex-direction: column;
-  }
-  .checkout {
-    width: 100%;
-    margin-bottom: 3rem;
+    margin: 2rem 2rem 0 2rem;
   }
   .go_back {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  .checkout {
+    padding: 1.5rem;
   }
   input {
-    width: 16.8rem;
+    width: 100%;
   }
   .checkout_text {
-    font-size: 32px;
+    font-size: 26px;
   }
-  .billing,
-  .shipping,
-  .payment {
-    letter-spacing: 0.9px;
+  label {
+    margin: 0.5rem 0 0 0;
+  }
+  .name_email,
+  .zipcode_city,
+  .emoneyNumberPin {
+    flex-direction: column;
   }
   .name_email input {
-    width: 16.8rem;
+    width: 100%;
+  }
+  .email_div,
+  .city_div,
+  .eMoneyPin {
+    margin-left: 0rem;
+    margin-top: 0.5rem;
+  }
+  .payment_method {
+    flex-direction: column;
+  }
+  .payment_method label {
+    margin-bottom: 1rem;
+  }
+  .payment_method {
+    flex-direction: column;
   }
   .e_money,
   .c_delivery {
-    width: 16.8rem;
-    margin: 0 0 1rem 11.8rem;
+    width: 100%;
+    margin: 0 0 1rem 0rem;
   }
   .c_delivery {
-    margin: 0 0 1rem 17.9rem;
+    margin: 0 0 1rem 0;
   }
 
   /* SUMMARY */
   .summary {
     width: 100%;
+    height: 36rem;
   }
 
   .name_price {
-    margin: 0 0 0 -22rem;
-  }
-  .cart_name {
-    letter-spacing: 1px;
-  }
-  .cart_price {
-    letter-spacing: 1px;
-  }
-  .total {
-    margin: 1rem 0;
-    letter-spacing: 1px;
-  }
-  .total h3 {
-    font-size: 15px;
-  }
-  .continue {
-    letter-spacing: 2px;
+    margin: 0 0 0 -5rem;
   }
 
   /* Dialog */
   dialog {
-    width: 65%;
+    top: 45%;
+    width: 80%;
     letter-spacing: 1px;
   }
   .thankyou {
-    font-size: 32px;
+    font-size: 26px;
   }
   .confimationemail {
-    font-size: 17px;
+    font-size: 14px;
+    opacity: 90%;
   }
-
+  .main_div {
+    flex-direction: column;
+  }
+  .inner_div {
+    width: 100%;
+  }
+  #firstProduct {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .inner_div2 {
+    width: 100%;
+    padding: 2rem 0 2rem 2rem;
+  }
   .dialog_name_price h3 {
     font-size: 17px;
   }
