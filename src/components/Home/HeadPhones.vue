@@ -23,7 +23,6 @@
             </router-link>
           </div>
         </div>
-        <!-- End -->
       </li>
     </ul>
 

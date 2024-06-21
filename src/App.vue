@@ -395,7 +395,6 @@ export default {
 /* Tablets / iPad ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .container_footer {
-    /* margin-top: 23rem; */
     padding: 2rem 3rem;
   }
 }
@@ -403,7 +402,6 @@ export default {
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
   .container_footer {
-    /* margin-top: 23rem; */
     padding: 3rem 2rem;
   }
 }

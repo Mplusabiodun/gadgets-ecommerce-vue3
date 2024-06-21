@@ -112,14 +112,12 @@ export default {
     },
     headPhonePrice() {
       let price = this.productDetails?.price * this.productDetails?.perProduct;
-      // parseInt(this.productDetails?.price) * this.productDetails?.perProduct;
       return price;
     },
     toCart() {
       this.cart.push({
         cartName: this.productDetails?.alias,
         cartImage: this.productDetails?.image,
-        // cartPrice: this.productDetails?.price,
         cartPrice: this.headPhonePrice(),
         cartPerProduct: this.productDetails?.perProduct,
       });
@@ -538,12 +536,5 @@ li {
     height: 2.5rem;
     margin-bottom: 3rem;
   }
-  /* .formargin {
-    margin: 5rem -1rem 0 -1rem;
-  }
-  .best {
-    margin-bottom: 0;
-    margin-left: 0rem;
-  } */
 }
 </style>

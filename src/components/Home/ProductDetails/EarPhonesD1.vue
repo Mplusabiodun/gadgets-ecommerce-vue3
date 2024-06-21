@@ -56,7 +56,6 @@
       <img id="big_img" :src="earphoneDetails?.live_image[2]" alt="EP13" />
     </div>
 
-    <!-- here -->
     <h2 class="you_may">YOU MAY ALSO LIKE</h2>
     <div class="general">
       <div>
@@ -112,17 +111,22 @@ export default {
     },
     earPhonePrice() {
       let price = this.earphoneDetails.price * this.earphoneDetails.perProduct;
-      // parseInt(this.earphoneDetails.price) * this.earphoneDetails.perProduct;
       return price;
     },
     toCart() {
-      this.cart.push({
-        cartName: this.earphoneDetails.alias,
-        cartImage: this.earphoneDetails.image,
-        // cartPrice: this.earphoneDetails.price,
-        cartPrice: this.earPhonePrice(),
-        cartPerProduct: this.earphoneDetails.perProduct,
-      });
+      const cartIndex = this.cart.findIndex(
+        (value) => value.cartName === this.earphoneDetails.alias
+      );
+      if (cartIndex < 0) {
+        this.cart.push({
+          cartName: this.earphoneDetails.alias,
+          cartImage: this.earphoneDetails.image,
+          cartPrice: this.earPhonePrice(),
+          cartPerProduct: this.earphoneDetails.perProduct,
+        });
+      } else {
+        this.cart[cartIndex.cartPerProduct] += this.earphoneDetails.perProduct;
+      }
     },
     add() {
       this.earphoneDetails.perProduct += 1;
@@ -143,8 +147,6 @@ export default {
       return product.id === earphoneId;
     });
     this.earphoneDetails = selectedPhone;
-    // console.log(selectedPhone);
-    // console.log(this.earphoneDetails);
   },
 };
 </script>

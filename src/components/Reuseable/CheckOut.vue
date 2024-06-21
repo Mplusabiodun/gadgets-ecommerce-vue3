@@ -132,26 +132,28 @@
             <img :src="eachproduct.cartImage" :alt="eachproduct.cartName" />
             <div class="name_price">
               <h3 class="cart_name">{{ eachproduct.cartName }}</h3>
-              <p class="cart_price">$ {{ eachproduct.cartPrice }}</p>
+              <p class="cart_price">
+                $ {{ eachproduct.cartPrice?.toLocaleString() }}
+              </p>
             </div>
             <h3 class="required">x{{ eachproduct.cartPerProduct }}</h3>
           </li>
         </ul>
         <div class="total">
           <h3>TOTAL</h3>
-          <p>$ {{ total }}</p>
+          <p>$ {{ total?.toLocaleString() }}</p>
         </div>
         <div class="total">
           <h3>SHIPPING</h3>
-          <p>$ {{ shipping }}</p>
+          <p>$ {{ shipping?.toLocaleString() }}</p>
         </div>
         <div class="total">
           <h3>VAT (INCLUDED)</h3>
-          <p>$ {{ vatIncluded }}</p>
+          <p>$ {{ vatIncluded?.toLocaleString() }}</p>
         </div>
         <div class="total">
           <h3>GRAND TOTAL</h3>
-          <p class="grandtotal">$ {{ grandTotal }}</p>
+          <p class="grandtotal">$ {{ grandTotal?.toLocaleString() }}</p>
         </div>
         <button @click="proceedToPay" class="continue">CONTINUE & PAY</button>
         <p class="invalid_text" v-if="inputValidity === 'invalid'">
@@ -181,7 +183,7 @@
           />
           <div class="dialog_name_price">
             <h3>{{ firstOfCart.cartName }}</h3>
-            <p>$ {{ firstOfCart.cartPrice }}</p>
+            <p>$ {{ firstOfCart.cartPrice?.toLocaleString() }}</p>
           </div>
           <p class="number">x{{ firstOfCart.cartPerProduct }}</p>
         </div>
@@ -192,7 +194,7 @@
       </div>
       <div class="inner_div2">
         <h3>Grand total</h3>
-        <p>$ {{ grandTotal }}</p>
+        <p>$ {{ grandTotal?.toLocaleString() }}</p>
       </div>
     </div>
     <button @click="goBack" class="continue">BACK TO HOME</button>
@@ -229,8 +231,8 @@ export default {
     },
     backDrop() {
       this.continueToPay = false;
-      // this.$router.push("/homepage");
-      // this.cart.splice(0, this.cart.length);
+      this.$router.push("/homepage");
+      this.cart.splice(0, this.cart.length);
     },
     proceedToPay() {
       if (
@@ -630,7 +632,6 @@ hr {
   .summary {
     width: 100%;
   }
-
   .name_price {
     margin: 0 0 0 -22rem;
   }
@@ -738,11 +739,9 @@ hr {
     width: 100%;
     height: 36rem;
   }
-
   .name_price {
     margin: 0 0 0 -5rem;
   }
-
   /* Dialog */
   dialog {
     top: 45%;

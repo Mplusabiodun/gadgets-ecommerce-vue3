@@ -16,7 +16,6 @@
       facility - we're open 7 days a week.
     </p>
     <div id="icons">
-      <!-- <a href="http://" target="_blank" rel="noopener noreferrer"></a> -->
       <a href="https://web.facebook.com/mplus.abiodun/" target="blank">
         <img src="../Home/pics/facebook.png" alt="facebook" />
       </a>

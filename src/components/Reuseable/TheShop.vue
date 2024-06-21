@@ -35,13 +35,13 @@
 export default {
   methods: {
     headPhones() {
-      this.$router.push("/headphones");
+      this.$router.push("/headphones/XX99MarkI");
     },
     speakers() {
-      this.$router.push("/speakers");
+      this.$router.push("/speakers/ZX9");
     },
     earPhones() {
-      this.$router.push("/earphones");
+      this.$router.push("/earphones/YX1");
     },
   },
 };

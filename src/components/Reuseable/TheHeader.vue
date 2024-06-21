@@ -39,13 +39,13 @@
       <div class="total-checkout">
         <div class="total">
           <h3>TOTAL</h3>
-          <p>$ {{ total }}</p>
+          <p>$ {{ total?.toLocaleString() }}</p>
         </div>
         <button @click="checkOut" class="checkout">CHECKOUT</button>
       </div>
     </dialog>
 
-    <dialog open v-if="hamburger === true" class="hamburger">
+    <dialog open v-if="hamburger" class="hamburger">
       <nav class="navigation2">
         <ul>
           <li @click="home">HOME</li>
@@ -255,25 +255,12 @@ dialog {
 }
 
 /* HAMBURGER */
-/* .hamburger {
-  position: fixed;
-  top: 25%;
-  left: 0%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  background-color: #fff;
-  border: 2px solid #ccc;
-  padding: 25px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
-  z-index: 100;
-} */
 .hamburger {
   position: absolute;
   top: 75%;
-  left: 19%;
+  left: 30%;
   transform: translate(-50%, 0%);
-  width: 40%;
+  width: 35%;
   background-color: #fff;
   border: 2px solid #ccc;
   padding: 15px 0;
@@ -284,8 +271,9 @@ dialog {
 }
 .hamburger li {
   list-style-type: none;
-  font-size: 15px;
+  font-size: 18px;
   margin: 1rem 0 1rem -1rem;
+  letter-spacing: 1px;
 }
 
 /* Tablets / iPad ----------- */
@@ -347,9 +335,6 @@ dialog {
 
 /* Mobile ----------- */
 @media only screen and (max-width: 767px) {
-  /* * {
-    margin: 0 0rem;
-  } */
   .nav_bar {
     justify-content: space-between;
     padding: 1.5rem 2.2rem;
@@ -375,7 +360,6 @@ dialog {
   }
   dialog {
     top: 120%;
-    /* left: 45%; */
     left: 37%;
     width: 90%;
     padding: 40px;
@@ -409,6 +393,18 @@ dialog {
   .checkout {
     letter-spacing: 3px;
     font-size: 22px;
+  }
+  /* HAMBURGER */
+  .hamburger {
+    top: 75%;
+    left: 19%;
+    width: 40%;
+    padding: 15px 0;
+  }
+  .hamburger li {
+    list-style-type: none;
+    font-size: 15px;
+    margin: 1rem 0 1rem -1rem;
   }
 }
 </style>

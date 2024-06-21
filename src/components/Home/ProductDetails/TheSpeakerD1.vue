@@ -105,14 +105,12 @@ export default {
     },
     speakerPrice() {
       let price = this.speakerDetails.price * this.speakerDetails.perProduct;
-      // parseInt(this.speakerDetails.price) * this.speakerDetails.perProduct;
       return price;
     },
     toCart() {
       this.cart.push({
         cartName: this.speakerDetails.alias,
         cartImage: this.speakerDetails.image,
-        // cartPrice: this.speakerDetails.price,
         cartPrice: this.speakerPrice(),
         cartPerProduct: this.speakerDetails.perProduct,
       });
@@ -376,7 +374,6 @@ li {
   .container3 {
     width: 100%;
     margin-bottom: 5rem;
-    /* margin: 0 -19rem 0 0; */
   }
   .features {
     font-size: 32px;
@@ -528,12 +525,5 @@ li {
     height: 2.5rem;
     margin-bottom: 3rem;
   }
-  /* .formargin {
-    margin: 5rem -1rem 0 -1rem;
-  }
-  .best {
-    margin-bottom: 0;
-    margin-left: 0rem;
-  } */
 }
 </style>

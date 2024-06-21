@@ -373,10 +373,6 @@ export default {
     width: 80%;
   }
   #ZX7 {
-    /* background-image: url("@/assets/ZX7_speaker_backg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     padding: 7rem 0 0 6rem;
@@ -395,8 +391,6 @@ export default {
     letter-spacing: 2px;
   }
   .YX1_Container {
-    /* width: 100%; */
-    /* display: flex; */
     flex-direction: column;
     margin: 0 0 10rem 0;
   }
@@ -412,10 +406,5 @@ export default {
     text-align: left;
     border-radius: 15px;
   }
-  /* .YX1_Name {
-    text-align: left;
-    font-size: 28px;
-    letter-spacing: 1px;
-  } */
 }
 </style>
