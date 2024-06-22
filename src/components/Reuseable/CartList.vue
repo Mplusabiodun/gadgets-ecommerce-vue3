@@ -3,18 +3,41 @@
     <img :src="cart.cartImage" :alt="cart.cartName" />
     <div class="name_price">
       <h3>{{ cart.cartName }}</h3>
+      <!-- <p>$ {{ cartPrice?.toLocaleString() }}</p> -->
       <p>$ {{ cart.cartPrice?.toLocaleString() }}</p>
     </div>
     <button class="number">
       <span @click="sub" class="sub">-</span
-      ><span class="figure">{{ cart.cartPerProduct }}</span
+      ><span class="figure">{{ noOfProduct }}</span
       ><span @click="add" class="add">+</span>
     </button>
   </li>
+  <!-- ><span class="figure">{{ cart.cartPerProduct }}</span -->
 </template>
 <script>
 export default {
   props: ["cartList"],
+  data() {
+    return {
+      noOfProduct: null,
+      // cartPrice: null,
+    };
+  },
+  methods: {
+    add() {
+      // for (const cart of this.cartList) {
+      //   this.noOfProduct = cart.cartPerProduct;
+      //   this.cartPrice = cart.cartNormPrice * this.noOfProduct;
+      // }
+      this.noOfProduct += 1;
+    },
+  },
+  created() {
+    for (const cart of this.cartList) {
+      this.noOfProduct = cart.cartPerProduct;
+      // this.cartPrice = cart.cartNormPrice * this.noOfProduct;
+    }
+  },
 };
 </script>
 

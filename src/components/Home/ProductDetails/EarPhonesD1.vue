@@ -13,7 +13,7 @@
         <p class="headphoneII_word">
           {{ earphoneDetails.description }}
         </p>
-        <p class="price">$ {{ earPhonePrice() }}</p>
+        <p class="price">$ {{ earPhonePrice()?.toLocaleString() }}</p>
         <button class="number">
           <span @click="sub" class="sub">-</span
           ><span class="figure">{{ earphoneDetails.perProduct }}</span
@@ -118,14 +118,16 @@ export default {
         (value) => value.cartName === this.earphoneDetails.alias
       );
       if (cartIndex < 0) {
+        // this.earphoneDetails.perProduct += 0;
         this.cart.push({
           cartName: this.earphoneDetails.alias,
           cartImage: this.earphoneDetails.image,
           cartPrice: this.earPhonePrice(),
+          cartNormPrice: this.earphoneDetails.price,
           cartPerProduct: this.earphoneDetails.perProduct,
         });
       } else {
-        this.cart[cartIndex.cartPerProduct] += this.earphoneDetails.perProduct;
+        this.cart[cartIndex.cartPerProduct] = this.earphoneDetails.perProduct;
       }
     },
     add() {

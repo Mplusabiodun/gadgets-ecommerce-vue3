@@ -7,7 +7,7 @@
         <p v-if="speakerDetails.new === true" class="new">NEW PRODUCT</p>
         <h1 class="XX99_MARK">{{ speakerDetails.name }}</h1>
         <p class="headphoneII_word">{{ speakerDetails.description }}.</p>
-        <p class="price">$ {{ speakerPrice() }}</p>
+        <p class="price">$ {{ speakerPrice()?.toLocaleString() }}</p>
         <button class="number">
           <span @click="sub" class="sub">-</span
           ><span class="figure">{{ speakerDetails.perProduct }}</span

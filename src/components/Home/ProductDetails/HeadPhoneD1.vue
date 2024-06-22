@@ -9,7 +9,7 @@
         <p class="headphoneII_word">
           {{ productDetails?.description }}
         </p>
-        <p class="price">$ {{ headPhonePrice() }}</p>
+        <p class="price">$ {{ headPhonePrice()?.toLocaleString() }}</p>
         <button class="number">
           <span @click="sub" class="sub">-</span
           ><span class="figure">{{ productDetails?.perProduct }}</span
