@@ -118,7 +118,6 @@ export default {
         (value) => value.cartName === this.earphoneDetails.alias
       );
       if (cartIndex < 0) {
-        // this.earphoneDetails.perProduct += 0;
         this.cart.push({
           cartName: this.earphoneDetails.alias,
           cartImage: this.earphoneDetails.image,
@@ -127,7 +126,8 @@ export default {
           cartPerProduct: this.earphoneDetails.perProduct,
         });
       } else {
-        this.cart[cartIndex.cartPerProduct] = this.earphoneDetails.perProduct;
+        this.cart[cartIndex.cartPerProduct] =
+          this.earphoneDetails.perProduct + 1;
       }
     },
     add() {

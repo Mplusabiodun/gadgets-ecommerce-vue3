@@ -3,7 +3,6 @@
     <img :src="cart.cartImage" :alt="cart.cartName" />
     <div class="name_price">
       <h3>{{ cart.cartName }}</h3>
-      <!-- <p>$ {{ cartPrice?.toLocaleString() }}</p> -->
       <p>$ {{ cart.cartPrice?.toLocaleString() }}</p>
     </div>
     <button class="number">
@@ -20,22 +19,22 @@ export default {
   data() {
     return {
       noOfProduct: null,
-      // cartPrice: null,
     };
   },
   methods: {
     add() {
-      // for (const cart of this.cartList) {
-      //   this.noOfProduct = cart.cartPerProduct;
-      //   this.cartPrice = cart.cartNormPrice * this.noOfProduct;
-      // }
       this.noOfProduct += 1;
+    },
+    sub() {
+      this.noOfProduct -= 1;
+      if (this.noOfProduct < 1) {
+        return (this.noOfProduct = 1);
+      }
     },
   },
   created() {
     for (const cart of this.cartList) {
       this.noOfProduct = cart.cartPerProduct;
-      // this.cartPrice = cart.cartNormPrice * this.noOfProduct;
     }
   },
 };

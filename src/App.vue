@@ -361,8 +361,6 @@ export default {
     return {
       products: this.products,
       cart: this.cart,
-      // total: this.total,
-      // numberOfProduct: this.numberOfProduct,
     };
   },
 };
