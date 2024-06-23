@@ -14,8 +14,8 @@
               type="text"
               placeholder="Alexei Ward"
               v-model.trim="userName"
-              :class="{ invalid: inputValidity === 'invalid' }"
             />
+            <!-- :class="{ invalid: inputValidity === 'invalid' }" -->
           </div>
           <div class="email_div">
             <label for="email">Email Address</label>
@@ -24,8 +24,8 @@
               type="email"
               placeholder="alexei@mail.com"
               v-model.trim="userEmail"
-              :class="{ invalid: inputValidity === 'invalid' }"
             />
+            <!-- :class="{ invalid: inputValidity === 'invalid' }" -->
           </div>
         </div>
         <div>
@@ -247,9 +247,10 @@ export default {
         this.userMoneyNumber === null ||
         this.userMoneyPin === null
       ) {
-        return (this.inputValidity = "invalid");
+        this.inputValidity = "invalid";
+        return;
       } else {
-        this.inputValidity = "valid";
+        // this.inputValidity = "valid";
         this.continueToPay = true;
         console.log(this.cart);
       }
