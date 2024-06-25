@@ -115,13 +115,28 @@ export default {
       return price;
     },
     toCart() {
-      this.cart.push({
-        cartName: this.productDetails?.alias,
-        cartImage: this.productDetails?.image,
-        cartPrice: this.headPhonePrice(),
-        cartPerProduct: this.productDetails?.perProduct,
-      });
+      const cartIndex = this.cart.findIndex(
+        (value) => value.cartName === this.productDetails.alias
+      );
+      if (cartIndex < 0) {
+        this.cart.push({
+          cartName: this.productDetails.alias,
+          cartImage: this.productDetails.image,
+          cartPrice: this.headPhonePrice(),
+          cartNormPrice: this.productDetails.price,
+          cartPerProduct: this.productDetails.perProduct,
+        });
+      } else {
+        this.cart[cartIndex.cartPerProduct] =
+          this.productDetails.perProduct + 1;
+      }
     },
+    // this.cart.push({
+    //     cartName: this.productDetails?.alias,
+    //     cartImage: this.productDetails?.image,
+    //     cartPrice: this.headPhonePrice(),
+    //     cartPerProduct: this.productDetails?.perProduct,
+    //   });
     add() {
       this.productDetails.perProduct += 1;
     },

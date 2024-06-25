@@ -14,12 +14,21 @@
         <router-link to="/speakers">SPEAKERS</router-link>
         <router-link to="/earphones">EARPHONES</router-link>
       </nav>
-      <img
-        @click="toCart"
-        id="assets"
-        src="../Home/pics/Combined_Shape.png"
-        alt="Combined Shape"
-      />
+      <div>
+        <img
+          @click="toCart"
+          id="assets"
+          src="../Home/pics/Combined_Shape.png"
+          alt="Combined Shape"
+        />
+        <p
+          class="numberofproduct"
+          v-if="addToCart === false && cart.length > 0"
+        >
+          <!-- {{ noOfSelectedProduct }} -->
+          {{ cart.length }}
+        </p>
+      </div>
     </nav>
     <hr />
 
@@ -74,7 +83,18 @@ export default {
       hamburger: false,
     };
   },
-  computed: {},
+  // computed: {
+  //   arrayLength() {
+  //     return this.cart.length;
+  //   },
+  // },
+  // watch: {
+  //   arrayLength(newLength, oldLength) {
+  //     if (newLength !== oldLength) {
+  //       this.toCart2(newLength);
+  //     }
+  //   },
+  // },
   methods: {
     hamburgerDisplay() {
       this.hamburger = !this.hamburger;
@@ -102,6 +122,12 @@ export default {
         this.total += products.cartPrice;
       }
     },
+    // toCart2(newLength) {
+    //   console.log("Array length changed to:", newLength);
+    //   for (const products of this.cart) {
+    //     this.total += products.cartPrice;
+    //   }
+    // },
     removeAllCart() {
       this.cart.splice(0, this.cart.length);
       this.noOfSelectedProduct = 0;
@@ -116,6 +142,11 @@ export default {
       }
     },
   },
+  // created() {
+  // for (const products of this.cart) {
+  //   this.total += parseInt(products.cartPrice);
+  // }
+  // },
 };
 </script>
 
@@ -153,6 +184,11 @@ export default {
 #assets {
   width: 23.33px;
   height: 20px;
+  /* display: inline; */
+}
+.numberofproduct {
+  color: red;
+  margin: -2.3rem 0rem 0 1.5rem;
 }
 #Hamburger {
   display: none;
@@ -298,6 +334,10 @@ dialog {
   .navigations {
     display: none;
   }
+  .numberofproduct {
+    font-weight: bold;
+    margin: -2.3rem 0rem 0 1.8rem;
+  }
   hr {
     opacity: 25%;
   }
@@ -350,6 +390,9 @@ dialog {
   #assets {
     width: 1.5rem;
     height: 1.5rem;
+  }
+  .numberofproduct {
+    margin: -2.3rem 0rem 0 1.7rem;
   }
   hr {
     opacity: 50%;

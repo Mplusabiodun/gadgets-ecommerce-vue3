@@ -108,13 +108,28 @@ export default {
       return price;
     },
     toCart() {
-      this.cart.push({
-        cartName: this.speakerDetails.alias,
-        cartImage: this.speakerDetails.image,
-        cartPrice: this.speakerPrice(),
-        cartPerProduct: this.speakerDetails.perProduct,
-      });
+      const cartIndex = this.cart.findIndex(
+        (value) => value.cartName === this.speakerDetails.alias
+      );
+      if (cartIndex < 0) {
+        this.cart.push({
+          cartName: this.speakerDetails.alias,
+          cartImage: this.speakerDetails.image,
+          cartPrice: this.speakerPrice(),
+          cartNormPrice: this.speakerDetails.price,
+          cartPerProduct: this.speakerDetails.perProduct,
+        });
+      } else {
+        this.cart[cartIndex.cartPerProduct] =
+          this.speakerDetails.perProduct + 1;
+      }
     },
+    // this.cart.push({
+    //     cartName: this.speakerDetails.alias,
+    //     cartImage: this.speakerDetails.image,
+    //     cartPrice: this.speakerPrice(),
+    //     cartPerProduct: this.speakerDetails.perProduct,
+    //   });
     add() {
       this.speakerDetails.perProduct += 1;
     },

@@ -7,11 +7,11 @@
     </div>
     <button class="number">
       <span @click="sub" class="sub">-</span
-      ><span class="figure">{{ noOfProduct }}</span
+      ><span class="figure">{{ cart.cartPerProduct }}</span
       ><span @click="add" class="add">+</span>
     </button>
   </li>
-  <!-- ><span class="figure">{{ cart.cartPerProduct }}</span -->
+  <!-- ><span class="figure">{{ noOfProduct }}</span -->
 </template>
 <script>
 export default {
@@ -32,11 +32,11 @@ export default {
       }
     },
   },
-  created() {
-    for (const cart of this.cartList) {
-      this.noOfProduct = cart.cartPerProduct;
-    }
-  },
+  // created() {
+  //   for (const cart of this.cartList) {
+  //     this.noOfProduct = cart.cartPerProduct;
+  //   }
+  // },
 };
 </script>
 
@@ -87,7 +87,7 @@ p {
 }
 .sub,
 .add {
-  opacity: 25%;
+  opacity: 0%;
   font-size: 18px;
 }
 .sub {
