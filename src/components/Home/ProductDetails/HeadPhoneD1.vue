@@ -127,18 +127,12 @@ export default {
           cartPerProduct: this.productDetails.perProduct,
         });
       } else {
-        this.cart[cartIndex.cartPerProduct] =
+        this.cart[cartIndex].cartPerProduct =
           this.productDetails.perProduct + 1;
       }
     },
-    // this.cart.push({
-    //     cartName: this.productDetails?.alias,
-    //     cartImage: this.productDetails?.image,
-    //     cartPrice: this.headPhonePrice(),
-    //     cartPerProduct: this.productDetails?.perProduct,
-    //   });
     add() {
-      this.productDetails.perProduct += 1;
+      this.productDetails.perProduct = this.productDetails.perProduct + 1;
     },
     sub() {
       this.productDetails.perProduct -= 1;

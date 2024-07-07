@@ -120,7 +120,7 @@ export default {
           cartPerProduct: this.speakerDetails.perProduct,
         });
       } else {
-        this.cart[cartIndex.cartPerProduct] =
+        this.cart[cartIndex].cartPerProduct =
           this.speakerDetails.perProduct + 1;
       }
     },

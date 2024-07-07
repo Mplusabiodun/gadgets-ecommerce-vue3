@@ -1,13 +1,16 @@
 <template>
-  <li v-for="cart in cartList" :key="cart.name">
-    <img :src="cart.cartImage" :alt="cart.cartName" />
+  <div>
+    {{ cart }}
+  </div>
+  <li v-for="eachCart in cart" :key="eachCart.name">
+    <img :src="eachCart.cartImage" :alt="eachCart.cartName" />
     <div class="name_price">
-      <h3>{{ cart.cartName }}</h3>
-      <p>$ {{ cart.cartPrice?.toLocaleString() }}</p>
+      <h3>{{ eachCart.cartName }}</h3>
+      <p>$ {{ eachCart.cartPrice?.toLocaleString() }}</p>
     </div>
     <button class="number">
       <span @click="sub" class="sub">-</span
-      ><span class="figure">{{ cart.cartPerProduct }}</span
+      ><span class="figure">{{ eachCart.cartPerProduct }}</span
       ><span @click="add" class="add">+</span>
     </button>
   </li>
@@ -15,7 +18,8 @@
 </template>
 <script>
 export default {
-  props: ["cartList"],
+  // props: ["cartList"],
+  inject: ["cart"],
   data() {
     return {
       noOfProduct: null,

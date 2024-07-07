@@ -126,7 +126,7 @@ export default {
           cartPerProduct: this.earphoneDetails.perProduct,
         });
       } else {
-        this.cart[cartIndex.cartPerProduct] =
+        this.cart[cartIndex].cartPerProduct =
           this.earphoneDetails.perProduct + 1;
       }
     },

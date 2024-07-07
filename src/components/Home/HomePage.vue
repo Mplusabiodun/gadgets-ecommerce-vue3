@@ -4,7 +4,6 @@
       <div class="second">
         <p class="new">NEW PRODUCT</p>
         <h1 class="XX99_MARK">XX99 Mark II Headphones</h1>
-
         <p class="word">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
